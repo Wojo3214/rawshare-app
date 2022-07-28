@@ -17,6 +17,9 @@ import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
 import Tab5 from './pages/Tab5';
+import Start from './pages/Start';
+import Login from './pages/Login';
+import ProductDetails from './pages/ProductDetails';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -60,6 +63,15 @@ export default function App(){
             </Route>
             <Route path="/tab5">
               <Tab5 />
+            </Route>
+            <Route path="/start">
+              <Start />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/productDetails">
+              <ProductDetails />
             </Route>
             <Route exact path="/">
               <Redirect to="/tab1" />

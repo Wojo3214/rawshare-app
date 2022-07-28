@@ -1,5 +1,7 @@
+ion-icon{
+    font-size: 24px;
+}
 /***NAVIGATION***/
-
 .navbar{
     contain: none;
     overflow: visible;
@@ -29,3 +31,42 @@
     background-color: #80b918;
 }
 
+/*##### GLOBAL BUTTON STYLE #####*/
+
+.btn {
+    --border-radius: 1000px;
+    font-weight: 600;
+}
+
+.btn-primary{
+    --background: var(--ion-color-primary);
+}
+
+.btn-primary--negative{
+    --background: #fafafa;
+    --color: var(--ion-text-color);
+}
+
+.btn-secondary{
+    background-color: none;
+    --border-color: var(--ion-color-primary);
+}
+
+.btn-secondary--negative{
+    --background: none;
+    --color: #fafafa;
+    --border-color: #fafafa;
+    --border-width: 2px;
+}
+
+ion-badge{
+    height: min-content;
+}
+
+ion-buttons{
+    width: 100%;
+}
+
+ion-button{
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+.login-section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+.logo{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}

@@ -1,8 +1,13 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+/** Fonts **/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 /** Ionic CSS Variables **/
 :root {
+  --ion-font-family:  'Plus Jakarta Sans', sans-serif !important;
+  
   --ion-background-color: #ffffff;
 	--ion-background-color-rgb: 255,255,255;
 
@@ -50,6 +55,13 @@ http://ionicframework.com/docs/theming/ */
 	--ion-color-tertiary-shade: #d8d8d8;
 	--ion-color-tertiary-tint: #f6f6f6;
 
+  --ion-color-blue: #1889B9;
+	--ion-color-blue-rgb: 24,137,185;
+	--ion-color-blue-contrast: #ffffff;
+	--ion-color-blue-contrast-rgb: 255,255,255;
+	--ion-color-blue-shade: #1579a3;
+	--ion-color-blue-tint: #2f95c0;
+
 	--ion-color-success: #49bb70;
 	--ion-color-success-rgb: 73,187,112;
 	--ion-color-info-contrast: #fafafa;
@@ -77,6 +89,27 @@ http://ionicframework.com/docs/theming/ */
 	--ion-color-info-contrast-rgb: 250,250,250;
 	--ion-color-info-shade: #4d89c1;
 	--ion-color-info-tint: #69a6df;
+
+  --ion-color-link: #2D81CF;
+	--ion-color-link-rgb: 45,129,207;
+	--ion-color-link-contrast: #ffffff;
+	--ion-color-link-contrast-rgb: 255,255,255;
+	--ion-color-link-shade: #2872b6;
+	--ion-color-link-tint: #428ed4;
+
+  --ion-color-dark: #2D2D2D;
+	--ion-color-dark-rgb: 45,45,45;
+	--ion-color-dark-contrast: #ffffff;
+	--ion-color-dark-contrast-rgb: 255,255,255;
+	--ion-color-dark-shade: #282828;
+	--ion-color-dark-tint: #424242;
+
+  --ion-color-form-bg: #F5F5F5;
+	--ion-color-form-bg-rgb: 245,245,245;
+	--ion-color-form-bg-contrast: #000000;
+	--ion-color-form-bg-contrast-rgb: 0,0,0;
+	--ion-color-form-bg-shade: #d8d8d8;
+	--ion-color-form-bg-tint: #f6f6f6;
 
 	--ion-color-medium: #92949c;
 	--ion-color-medium-rgb: 146,148,156;
