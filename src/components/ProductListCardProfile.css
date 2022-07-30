@@ -1,0 +1,24 @@
+ion-icon.detail-icon{
+    font-size: 12px;
+}
+
+ion-icon.detail-icon-star{
+    font-size: 12px;
+    color: var(--ion-color-warning);
+}
+
+ion-chip.amount-label{
+    font-size: 12px;
+    padding-inline: 0;
+    margin-inline: 0;
+    margin: 0;
+    padding: 6px 12px;
+    height: fit-content;
+    background-color: #1889B9;
+    color: white;
+    font-weight: 600;
+}
+
+ion-icon{
+    font-size: 24px;
+}

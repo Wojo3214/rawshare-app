@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import Notification from '../components/Notification';
 import './Tab5.css';
 
 export default function Tab5() {
@@ -16,7 +16,7 @@ export default function Tab5() {
             <IonTitle size="large">Notifications</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 5 page" />
+        <Notification/>
       </IonContent>
     </IonPage>
   );

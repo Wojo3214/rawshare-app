@@ -45,6 +45,7 @@ ion-input.input{
   --inner-padding-start: 16px;
   --padding-top: 12px;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .login-text{

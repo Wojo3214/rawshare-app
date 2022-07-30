@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import ProductListCardProfile from '../components/ProductListCardProfile';
 import './Tab4.css';
 
 export default function Tab4() {
@@ -16,7 +16,7 @@ export default function Tab4() {
             <IonTitle size="large">Profile</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 4 page" />
+        <ProductListCardProfile/>
       </IonContent>
     </IonPage>
   );

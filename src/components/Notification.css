@@ -1,0 +1,30 @@
+/*** NOTIFICATIONS ***/
+
+.account-name{
+    font-weight: 600;
+    color: #1889B9;
+}
+
+.notification-badge{
+    margin: -4px 0 0 -4px;
+    padding: 3px 7px;
+    font-size: 12px;
+    overflow: visible;
+}
+
+.notification-header{
+    padding: 12px;
+}
+
+ion-item.notification-item{
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
+    display: flex;
+    align-items: flex-start;
+    --background: #F5F5F5;
+    overflow: visible;
+}
+
+ion-card.notification-card{
+    overflow: visible;
+}
