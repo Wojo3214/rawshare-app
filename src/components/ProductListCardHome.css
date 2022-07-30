@@ -45,7 +45,7 @@ ion-img.product-card-img{
     height: 90px;
 }
 
-ion-img::part(image){
+ion-img.product-card-img::part(image){
     width: 90px;
     height: 90px;
 }
