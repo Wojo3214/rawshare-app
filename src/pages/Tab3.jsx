@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime } from '@ionic/react';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption } from '@ionic/react';
+import { Swiper, SwiperSlide} from 'swiper/react';
 import { Pagination } from "swiper";
 import './Tab3.css';
 import 'swiper/css';
@@ -8,8 +8,6 @@ import 'swiper/css';
 
 
 export default function Tab3() {
-  const swiper = useSwiper();
-  const [swiperRef, setSwiperRef] = useState(null);
   const [progressValue, setProgressValue] = useState(0.2);
 
   const pagination = {
@@ -22,7 +20,6 @@ export default function Tab3() {
   const countProgress = (e) => {
     const active = e.activeIndex;
 
-    console.log(active);
     if (active == 0){
       document.querySelector(".home-progress").value="0.2";
     }
@@ -36,7 +33,7 @@ export default function Tab3() {
 
   return (
     <IonPage>
-      <IonContent fullscreen scrollY="false">
+      <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle>Add new product</IonTitle>
@@ -48,7 +45,7 @@ export default function Tab3() {
             <p className='slide-title'>Upload image</p>
             <p className='slide-title' >Pick-up Info</p>
           </div>
-          <Swiper scrollY
+          <Swiper
             spaceBetween={0}
             slidesPerView={1}
             pagination={pagination}
@@ -63,7 +60,11 @@ export default function Tab3() {
                 </IonItem>
                 <IonItem lines='none' className='add-list-item'> 
                   <IonLabel position="stacked" className='form-label'>Food Type</IonLabel>
-                  <IonInput className='form-input' placeholder="Vegan"></IonInput>
+                  <IonSelect placeholder="Food type" interface="action-sheet" className='form-select' name='food-type'>
+                  <IonSelectOption value="fruit">Fruit</IonSelectOption>
+                  <IonSelectOption value="vegetable">Vegetable</IonSelectOption>
+                  <IonSelectOption value="pre-cooked">Pre-cooked</IonSelectOption>
+                </IonSelect>
                 </IonItem>
                 <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className='form-label'>Description</IonLabel>

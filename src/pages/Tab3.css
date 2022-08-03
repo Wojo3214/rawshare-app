@@ -96,3 +96,13 @@ ion-label.form-label{
 ion-progress-bar{
     margin-top: 16px;    
 }
+
+.form-select{
+    --padding-start: 16px;
+    --padding-end: 16px;
+    background-color: #F5F5F5;
+}
+
+.action-sheet-button.sc-ion-action-sheet-ios{
+    color: var(--ion-text-color);
+}
