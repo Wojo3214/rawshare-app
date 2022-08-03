@@ -1,0 +1,13 @@
+ion-searchbar.home-searchbar{
+    width: 80px;
+}
+
+ion-segment.home-segment{
+    width: 100%;
+    margin: 0 16px;
+}
+
+ion-segment-button.home-segment-button{
+    --indicator-color: #FAFAFA;
+    width: 38px;
+}
