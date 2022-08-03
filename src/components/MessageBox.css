@@ -1,0 +1,55 @@
+.message-box{
+  border-radius: 10px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.info{
+  box-shadow: inset 0px 0px 0px 2px var(--ion-color-info);
+}
+
+.warning{
+  box-shadow: inset 0px 0px 0px 2px var(--ion-color-warning);
+}
+
+.error{
+  box-shadow: inset 0px 0px 0px 2px var(--ion-color-danger);
+}
+
+.success{
+  box-shadow: inset 0px 0px 0px 2px var(--ion-color-success);
+}
+
+.message-box > .icon-container{
+  display: flex;
+  align-items: stretch;
+  min-height: 80px;
+  color: #fff;
+}
+
+.icon-container > .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.info > .icon-container{
+  background-color: var(--ion-color-info);
+}
+
+.warning > .icon-container{
+  background-color: var(--ion-color-warning);
+}
+
+.error > .icon-container{
+  background-color: var(--ion-color-danger);
+}
+
+.success > .icon-container{
+  background-color: var(--ion-color-success);
+}
+
+.message-box-text-container p{
+  margin: 4px 0;
+}

@@ -1,3 +1,23 @@
+ion-img.product-img::part(image){
+    border-radius: 8px;
+}
+
+ion-toolbar.toolbar-top{
+    box-sizing: border-box;
+    --background: none;
+    --ion-margin-start: 16px;
+    --ion-margin-end: 16px;
+}
+
+.product-go-back-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #CECECE;
+}
+
 .product-info{
     background: var(--ion-color-light);
     border-radius: 8px;
@@ -7,6 +27,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.product-info-name, .owner-info-amount-container ion-badge{
+    --ion-padding: 4px;
 }
 
 .product-info-title{
@@ -56,4 +80,19 @@ ion-footer.book-btn-container{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+ion-footer.book-btn-container > ion-toolbar > ion-buttons {
+    height: 45px;
+    border-radius: 100%;
+}
+
+ion-footer.book-btn-container > ion-toolbar > ion-buttons > ion-button{
+    height: 100%;
+}
+
+ion-footer.book-btn-container > ion-toolbar > ion-buttons > ion-button::part(native){
+    --border-radius: 100px;
+    font-weight: 600;
+    color: #fff;
 }
