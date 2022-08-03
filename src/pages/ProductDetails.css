@@ -18,6 +18,11 @@ ion-toolbar.toolbar-top{
     background-color: #CECECE;
 }
 
+.back-button-icon{
+    --icon-font-size: 24px;
+}
+
+
 .product-info{
     background: var(--ion-color-light);
     border-radius: 8px;
@@ -74,12 +79,12 @@ ion-item.owner-info{
 
 ion-footer.book-btn-container{
     position: fixed;
+    padding-top: 16px;
     background-color: #fafafa2c;
     bottom: 0%;
-    height: calc(100vh - 90%);
+    height: calc(100vh - 94%);
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 ion-footer.book-btn-container > ion-toolbar > ion-buttons {

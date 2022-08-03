@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton } from '@ionic/react';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Pagination } from "swiper";
 import './Tab3.css';
@@ -9,6 +9,7 @@ import 'swiper/css';
 
 export default function Tab3() {
   const [progressValue, setProgressValue] = useState(0.2);
+  const [activeIndex, serActiveIndex] = useState(0);
 
   const pagination = {
     clickable: true,
@@ -19,9 +20,11 @@ export default function Tab3() {
 
   const countProgress = (e) => {
     const active = e.activeIndex;
+    serActiveIndex(active);
 
     if (active == 0){
       document.querySelector(".home-progress").value="0.2";
+      singleButton();
     }
     else if (active == 1){
       document.querySelector(".home-progress").value="0.5";
@@ -31,11 +34,27 @@ export default function Tab3() {
     }
   }
 
+  function singleButton(){
+    return (
+      <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
+        <IonToolbar color="none" className='add-product-footer'>
+          <IonButtons slot="secondary">
+            <IonButton expand="block" className="btn btn-primary">Next</IonButton>
+          </IonButtons>
+        </IonToolbar>
+      </IonFooter>
+    )
+  }
+
+
   return (
     <IonPage>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
+          <IonToolbar className='toolbar-icon-padding'>
+            <IonButtons className="product-go-back-btn" slot="start">
+              <IonBackButton className='back-button-icon' defaultHref="tab1" text="" color="tertiary"  />
+            </IonButtons>
             <IonTitle>Add new product</IonTitle>
           </IonToolbar>
         </IonHeader>
@@ -61,15 +80,30 @@ export default function Tab3() {
                 <IonItem lines='none' className='add-list-item'> 
                   <IonLabel position="stacked" className='form-label'>Food Type</IonLabel>
                   <IonSelect placeholder="Food type" interface="action-sheet" className='form-select' name='food-type'>
-                  <IonSelectOption value="fruit">Fruit</IonSelectOption>
-                  <IonSelectOption value="vegetable">Vegetable</IonSelectOption>
-                  <IonSelectOption value="pre-cooked">Pre-cooked</IonSelectOption>
+                    <IonSelectOption value="fruit">Fruit</IonSelectOption>
+                    <IonSelectOption value="vegetable">Vegetable</IonSelectOption>
+                    <IonSelectOption value="pre-cooked">Pre-cooked</IonSelectOption>
                 </IonSelect>
                 </IonItem>
                 <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className='form-label'>Description</IonLabel>
                   <IonTextarea className='form-input'></IonTextarea>
                 </IonItem>
+                <div className='product-amount-div'>
+                  <IonItem lines='none' className='add-list-item'>
+                    <IonLabel position="stacked" className='form-label'>Amount</IonLabel>
+                    <IonInput className='form-input' placeholder="E.g. 10"></IonInput>
+                  </IonItem>
+                  <IonItem lines='none' className='add-list-item'>
+                    <IonLabel position="stacked" className='form-label'>Unit</IonLabel>
+                    <IonSelect placeholder="kg" interface="action-sheet" className='form-select' name='unit'>
+                      <IonSelectOption value="g">g</IonSelectOption>
+                      <IonSelectOption value="kg">kg</IonSelectOption>
+                      <IonSelectOption value="ml">ml</IonSelectOption>
+                      <IonSelectOption value="l">l</IonSelectOption>
+                </IonSelect>
+                  </IonItem>
+                </div>
                 <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className='form-label'>Expiration date</IonLabel>
                   <IonDatetime presentation="date" preferWheel={true}></IonDatetime>
@@ -83,6 +117,32 @@ export default function Tab3() {
               <p>Pick-up Info</p>
             </SwiperSlide>
           </Swiper>
+          { activeIndex == 0 ?
+           <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
+            <IonToolbar color="none" className='add-product-footer'>
+              <IonButtons slot="secondary">
+                <IonButton expand="block" className="btn btn-primary">Next</IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonFooter> 
+          : activeIndex == 1 ? 
+          <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
+            <IonToolbar color="none" className='add-product-footer'>
+              <IonButtons slot="secondary">
+                <IonButton expand="block" className="btn btn-primary">Back</IonButton>
+                <IonButton expand="block" className="btn btn-primary">Next</IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonFooter> 
+          : 
+          <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
+            <IonToolbar color="none" className='add-product-footer'>
+              <IonButtons slot="secondary">
+                <IonButton expand="block" className="btn btn-primary">Back</IonButton>
+                <IonButton expand="block" className="btn btn-primary">Add Item</IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonFooter>}
       </IonContent>
     </IonPage>
   );
