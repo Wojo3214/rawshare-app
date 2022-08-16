@@ -49,6 +49,10 @@ export default function Tab3() {
 
   return (
     <IonPage>
+      <IonHeader collapse="condense">
+          <IonToolbar className='toolbar-icon-padding'>
+          </IonToolbar>
+        </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar className='toolbar-icon-padding'>
@@ -106,7 +110,7 @@ export default function Tab3() {
                 </div>
                 <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className='form-label'>Expiration date</IonLabel>
-                  <IonDatetime presentation="date" preferWheel={true}></IonDatetime>
+                  <IonDatetime presentation="date-time" preferWheel="true"></IonDatetime>
                 </IonItem>
               </IonList> 
             </SwiperSlide>

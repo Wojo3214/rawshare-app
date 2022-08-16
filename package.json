@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@capacitor/app": "1.1.1",
-    "@capacitor/core": "3.6.0",
+    "@capacitor/core": "^3.6.0",
     "@capacitor/haptics": "1.1.4",
     "@capacitor/ios": "3.6.0",
     "@capacitor/keyboard": "1.2.3",
@@ -67,7 +67,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.6.0",
+    "@capacitor/cli": "^3.6.0",
     "react-scripts": "5.0.1"
   },
   "description": "An Ionic project"

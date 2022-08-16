@@ -31,7 +31,7 @@ export default function Tab1() {
   
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader collapse="condense">
         <IonToolbar>
           <IonTitle>Home</IonTitle>
         </IonToolbar>
