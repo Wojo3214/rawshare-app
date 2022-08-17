@@ -1,0 +1,13 @@
+.pick-up-address-header > p {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.pick-up-address-header > h3 {
+  margin-bottom: 8px;
+}
+
+.pick-up-address-header > p > span{
+  margin-left: 8px;
+}

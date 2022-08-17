@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonBackButton, IonImg, IonFooter, IonBadge, IonIcon, IonItem, IonAvatar, IonLabel, IonText } from '@ionic/react';
 import { calendarOutline, timeOutline, pinOutline, starSharp } from 'ionicons/icons';
-import ExploreContainer from '../components/ExploreContainer';
+import PickUpLocation from '../components/PickUpLocation';
 import './ProductDetails.css';
 
 export default function ProductDetails() {
@@ -13,7 +13,7 @@ export default function ProductDetails() {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent className="product-details-container" fullscreen>
         <IonImg src="https://images.pexels.com/photos/61127/pexels-photo-61127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="ion-padding product-img"></IonImg>
         <div class="product-info ion-padding ion-margin">
           <div className='product-info-name'>
@@ -46,13 +46,7 @@ export default function ProductDetails() {
             <IonBadge className='product-info-amount' color="primary">2</IonBadge>
           </div>
         </IonItem>
-        <div className='pick-up-address'>
-          <div className='pick-up-address-header'>
-            <IonIcon icon={pinOutline} />
-            <h3>Pick-up location</h3>
-          </div>
-          <div class="map"></div>
-        </div>
+        <PickUpLocation address="Aarhus C 8210"/>
         <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
           <IonToolbar color="none">
             <IonButtons slot="secondary">

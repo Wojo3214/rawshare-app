@@ -15,7 +15,7 @@ import { homeOutline, restaurantOutline, addOutline, personOutline, notification
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
-import Tab4 from './pages/Tab4';
+import Profile from './pages/Profile';
 import Tab5 from './pages/Tab5';
 import Start from './pages/Start';
 import Login from './pages/Login';
@@ -58,8 +58,8 @@ export default function App(){
             <Route path="/tab3">
               <Tab3 />
             </Route>
-            <Route path="/tab4">
-              <Tab4 />
+            <Route path="/profile">
+              <Profile />
             </Route>
             <Route path="/tab5">
               <Tab5 />
@@ -88,7 +88,7 @@ export default function App(){
             <IonTabButton class='add-product-tab' tab="tab3" href="/tab3">
               <IonIcon icon={addOutline} />
             </IonTabButton>
-            <IonTabButton class='nav-icon' tab="tab4" href="/tab4">
+            <IonTabButton class='nav-icon' tab="profile" href="/profile">
               <IonIcon icon={personOutline} />
             </IonTabButton>
             <IonTabButton class='nav-icon' tab="tab5" href="/tab5">

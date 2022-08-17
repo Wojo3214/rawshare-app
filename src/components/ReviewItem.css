@@ -1,0 +1,11 @@
+.review-item{
+    border-bottom: 1px solid #E5E5E5;
+}
+
+ion-avatar.review-user-img{
+    margin-right: 8px;
+}
+
+ion-item.review-user-info{
+    --padding-start: 0px;
+}

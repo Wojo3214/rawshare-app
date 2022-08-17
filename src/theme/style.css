@@ -70,8 +70,6 @@ ion-button{
 
 
 
-
-
 /*** FONTS ***/
 
 .default-text{
@@ -83,6 +81,19 @@ ion-button{
     font-size: 12px;
     margin: 0;
     color: #727272;
+}
+
+h1{
+    font-size: 28px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 800;
 }
 
 /*** FLEXBOX ***/

@@ -18,6 +18,10 @@ ion-toolbar.toolbar-top{
     background-color: #CECECE;
 }
 
+ion-content.product-details-container{
+    --padding-bottom:
+}
+
 .product-info{
     background: var(--ion-color-light);
     border-radius: 8px;
@@ -38,7 +42,7 @@ ion-toolbar.toolbar-top{
     font-weight: 800;
 }
 
-.product-info-item-pick-up-details, .pick-up-address-header{
+.product-info-item-pick-up-details{
     display: flex;
     align-items: center;
 }

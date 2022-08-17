@@ -2,10 +2,6 @@ import { IonIcon, IonRow, IonCol } from '@ionic/react';
 import { warningOutline, informationCircleOutline, checkmarkOutline, alertCircleOutline } from 'ionicons/icons';
 import './MessageBox.css';
 
-// interface ContainerProps {
-//   name: string;
-// }
-
 export default function MessageBox({ type, title, text }) {
   if(type == "informative"){
     return (

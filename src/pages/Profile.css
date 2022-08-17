@@ -1,0 +1,38 @@
+.profile-header{
+    height: 200px;
+    background: rgb(128,185,24);
+background: linear-gradient(180deg, rgba(128,185,24,1) 50%, rgba(255,255,255,1) 50%);
+}
+
+.review-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.review-box{
+    margin-bottom: 60px;
+}
+
+.profile-header ion-toolbar{
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ion-header.profile-header ion-img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ion-header.profile-header ion-img::part(image){
+    width: 84px;
+    height: 84px;
+    border-radius: 100px;
+    object-fit: cover;
+    border: 8px solid #fff;
+}
