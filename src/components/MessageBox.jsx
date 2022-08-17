@@ -5,7 +5,7 @@ import './MessageBox.css';
 export default function MessageBox({ type, title, text }) {
   if(type == "informative"){
     return (
-      <IonRow className="ion-align-items-center ion-margin message-box info">
+      <IonRow className="ion-margin message-box info">
         <IonCol className="icon-container" size="2" color="info">
           <div className="icon">
             <IonIcon icon={informationCircleOutline}/>
@@ -19,7 +19,7 @@ export default function MessageBox({ type, title, text }) {
     );
   } else if(type == "warning"){
     return (
-      <IonRow className="ion-align-items-center ion-margin message-box warning">
+      <IonRow className="ion-margin message-box warning">
         <IonCol className="icon-container" size="2" color="info">
           <div className="icon">  
             <IonIcon icon={warningOutline}/>
@@ -33,7 +33,7 @@ export default function MessageBox({ type, title, text }) {
     );
   } else if(type == "error"){
     return (
-      <IonRow className="ion-align-items-center ion-margin message-box error">
+      <IonRow className="ion-margin message-box error">
         <IonCol className="icon-container" size="2" color="info">
           <div className="icon">
             <IonIcon icon={alertCircleOutline}/>
@@ -47,7 +47,7 @@ export default function MessageBox({ type, title, text }) {
     );
   } else if(type == "success"){
     return (
-      <IonRow className="ion-align-items-center ion-margin message-box success">
+      <IonRow className="ion-margin message-box success">
         <IonCol className="icon-container" size="2" color="info">
          <div className="icon">
             <IonIcon icon={checkmarkOutline}/>

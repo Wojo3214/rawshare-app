@@ -7,7 +7,7 @@ export default function ProductListCardProfile({  }) {
     return (
       <IonCard button>
         <IonItem className='product-list-card'>
-            <div part="image" class></div>
+            <div part="image"></div>
             <IonImg src='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' className='product-card-img'></IonImg>
             <IonCardHeader className='product-list-header'>
                 <IonCardTitle className='product-list-title'>Banana</IonCardTitle>

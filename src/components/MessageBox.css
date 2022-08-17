@@ -23,7 +23,6 @@
 .message-box > .icon-container{
   display: flex;
   align-items: stretch;
-  min-height: 80px;
   color: #fff;
 }
 

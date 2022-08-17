@@ -9,7 +9,7 @@ export default function ProductDetails() {
       <IonHeader collapse="condense" className='ion-padding-start ion-padding-end'>
         <IonToolbar className='toolbar-top'>
           <IonButtons className="product-go-back-btn" slot="start">
-            <IonBackButton defaultHref="home" text="" color="tertiary" />
+            <IonBackButton className='back-button-icon' defaultHref="tab1" text="" color="tertiary" />
           </IonButtons>
         </IonToolbar>
       </IonHeader>
