@@ -24,15 +24,13 @@
     outline: 12px solid #fafafa;
 }
 
-.profile-header{
-    background-color: #80b918;
-}
 
 /*##### GLOBAL BUTTON STYLE #####*/
 
 .btn {
     --border-radius: 1000px;
     font-weight: 600;
+    height: 40px;
 }
 
 .btn-primary{

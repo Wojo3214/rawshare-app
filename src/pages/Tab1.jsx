@@ -1,17 +1,37 @@
 import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonTitle, IonToolbar, IonSearchbar } from '@ionic/react';
 import ProductListCardHome from '../components/../components/ProductListCardHome';
-import MessageBox from '../components/MessageBox';
+import { GoogleMap } from '@capacitor/google-maps';
+import { useState, useEffect, useRef } from 'react';
 import './Tab1.css';
-import { useState, useEffect } from 'react';
 
 export default function Tab1() {
   const [searchText, setSearchText] = useState();
+
+    const mapRef = useRef();
+    let newMap= GoogleMap;
+  
+    async function createMap() {
+      if (!mapRef.current) return;
+  
+      newMap = await GoogleMap.create({
+        id: 'my-map',
+        element: mapRef.current,
+        apiKey: "AIzaSyDR_G69pa62v4gKDd2ti1GNWFJWRrdIzO8",
+        config: {
+          center: {
+            lat: 56.15,
+            lng: 10.19
+          },
+          zoom: 12
+        }
+      })}
 
   useEffect(
     () => {
       const segment = document.querySelector(".home-segment");
       segment.value = "map"
       handleSegmentChange();
+      createMap();
     },
     [],
   );
@@ -31,14 +51,13 @@ export default function Tab1() {
   
   return (
     <IonPage>
-      <IonHeader collapse="condense">
-        <IonToolbar>
-          <IonTitle>Home</IonTitle>
+      <IonHeader translucent collapse="condense">
+        <IonToolbar className='toolbar-icon-padding home-toolbar'>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
+      <IonContent  fullscreen>
+        <IonHeader collapse="condense" translucent>
+          <IonToolbar className='home-toolbar'>
             <IonSegment className='home-segment' onIonChange={e => handleSegmentChange(e)}>
               <IonSegmentButton className='home-segment-button' value="map">
                 <IonLabel>Map</IonLabel>
@@ -52,15 +71,22 @@ export default function Tab1() {
             <IonSearchbar className='home-searchbar' value={searchText} onIonChange={e => setSearchText(e.detail.value)} showCancelButton="never"></IonSearchbar>
           </IonToolbar>
         </IonHeader>
-        <MessageBox type="informative" title="Information" text="This is an informative message box."/>
-        <MessageBox type="warning" title="Warning" text="This is a warning message box."/>
-        <MessageBox type="error" title="Error" text="This is an error message box."/>
-        <MessageBox type="success" title="Great success" text="This is a success message box."/>
         <div className='segment-item home-map' id="map">
-          <p>Map placeholder</p>
+          <div className="component-wrapper">
+            <capacitor-google-map ref={mapRef}></capacitor-google-map>
+          </div>
         </div>
         <div className='segment-item home-list' id="list">
-          <ProductListCardHome type="home-card" title="Banana" address="Haslegarsvej 24A"/>
+          <ProductListCardHome type="home-card" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+        </div>
+        <div className='segment-item home-list' id="list">
+          <ProductListCardHome type="home-card" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+        </div>
+        <div className='segment-item home-list' id="list">
+          <ProductListCardHome type="home-card" title="Lemon" seller="Kris" address="Haslegarsvej 24A" time="8:00 - 12:00" picture='https://images.pexels.com/photos/1021756/pexels-photo-1021756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+        </div>
+        <div className='segment-item home-list' id="list">
+          <ProductListCardHome type="home-card" title="Mint" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/4503751/pexels-photo-4503751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
         </div>
         
       </IonContent>

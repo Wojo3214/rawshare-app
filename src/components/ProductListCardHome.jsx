@@ -3,17 +3,17 @@ import { starSharp, timeOutline, locationOutline } from 'ionicons/icons';
 import './ProductListCardHome.css';
 
 
-export default function ProductListCardHome({type, title, address}) {
+export default function ProductListCardHome({type, title, address, seller, time, picture}) {
         return (
         <IonCard button>
             <IonItem className='product-list-card'>
                 <div part="image"></div>
-                <IonImg src='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' className='product-card-img'></IonImg>
+                <IonImg src={picture} className='product-card-img'></IonImg>
                 <IonCardHeader className='product-list-header'>
                     <IonCardTitle className='product-list-title'>{title}</IonCardTitle>
                     <div className='flex-row'>
                         <IonIcon icon={timeOutline}/>
-                        <p className="default-text" >13:00 - 15:00</p>
+                        <p className="default-text" >{time}</p>
                     </div>
                     <div className='flex-row'>
                         <IonIcon icon={locationOutline} className="detail-icon"/>
@@ -22,7 +22,7 @@ export default function ProductListCardHome({type, title, address}) {
                 </IonCardHeader>
                 <IonCardHeader className='product-list-details'>
                     <div className='product-list-user'>
-                        <p className="details-text" >Maddy</p>
+                        <p className="details-text" >{seller}</p>
                         <IonIcon icon={starSharp} className="detail-icon-star"/>
                         <p className="details-text" >3.7</p>
                     </div>

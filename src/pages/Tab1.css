@@ -5,9 +5,30 @@ ion-searchbar.home-searchbar{
 ion-segment.home-segment{
     width: 100%;
     margin: 0 16px;
+    background-color: transparent;
+    background: transparent;
 }
 
 ion-segment-button.home-segment-button{
     --indicator-color: #FAFAFA;
     width: 38px;
+}
+
+.home-toolbar{
+    --background:none;
+}
+
+capacitor-google-map {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.home-map {
+    height: 100vh;
+
+}
+
+.component-wrapper{
+    height: 100vh;
 }

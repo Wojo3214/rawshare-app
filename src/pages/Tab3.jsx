@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton, IonModal } from '@ionic/react';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Pagination } from "swiper";
 import './Tab3.css';
@@ -53,7 +53,7 @@ export default function Tab3() {
           <IonToolbar className='toolbar-icon-padding'>
           </IonToolbar>
         </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen >
         <IonHeader collapse="condense">
           <IonToolbar className='toolbar-icon-padding'>
             <IonButtons className="product-go-back-btn" slot="start">
@@ -109,8 +109,13 @@ export default function Tab3() {
                   </IonItem>
                 </div>
                 <IonItem lines='none' className='add-list-item'>
-                  <IonLabel position="stacked" className='form-label'>Expiration date</IonLabel>
-                  <IonDatetime presentation="date-time" preferWheel="true"></IonDatetime>
+                  <IonLabel position="stacked" className="form-label">Expiration date</IonLabel>
+                  <IonButton expand="block" className="form-label date-button" id="open-modal" >Pick up date</IonButton>
+                  <IonModal animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
+                    <IonContent className='date-container ion-padding'>
+                      <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons></IonDatetime>
+                    </IonContent>
+                  </IonModal>
                 </IonItem>
               </IonList> 
             </SwiperSlide>

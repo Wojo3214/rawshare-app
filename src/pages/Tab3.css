@@ -116,3 +116,18 @@ ion-progress-bar{
 .product-amount-div{
     display: flex;
 }
+
+.date-button{
+    --background: #F5F5F5;
+    color: var(--ion-text-color);
+    height: 37.5px;
+    font-size: 16px;
+}
+
+.date-container{
+    --background: transparent;
+}
+
+.date-modal{
+    border-radius: 8px;
+}
