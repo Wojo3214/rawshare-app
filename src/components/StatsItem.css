@@ -1,0 +1,37 @@
+.stats-item{
+    background-color: var(--ion-color-tertiary);
+    flex-grow: 1;
+    border-radius: 10px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+}
+
+.stats-item .stats-icon{
+    height: 100%;
+}
+
+.stats-item ion-col{
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+}
+
+.stats-item ion-col ion-icon{
+    font-size: 30px;
+}
+
+.stats-info {
+    text-align: center;
+    font-size: 14px;
+}
+
+.stats-info p{
+    margin: 0 0 2px 0;
+}
+
+/* .stats-info p:first-child{
+    font-weight: 700;
+} */

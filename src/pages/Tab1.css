@@ -1,7 +1,3 @@
-ion-searchbar.home-searchbar{
-    width: 80px;
-}
-
 ion-segment.home-segment{
     width: 100%;
     margin: 0 16px;
@@ -31,4 +27,34 @@ capacitor-google-map {
 
 .component-wrapper{
     height: 100vh;
+}
+/* ion-toolbar.home-heading{
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+} */
+
+.button-bar{
+    display: flex;
+    overflow-x: scroll;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.button-bar ion-button{
+    font-size: 14px;
+    --color: var(--ion-text-color);
+    --background: #FAFAFA;
+    --background-activated: #f0f0f0;
+    --transition: 0.3s;
+}
+
+/* .button-bar ion-searchbar.home-searchbar{
+    width: 20px;
+    --background: #FAFAFA;
+    --icon-color: var(--ion-text-color);
+} */
+
+::-webkit-scrollbar{
+    display: none;
 }

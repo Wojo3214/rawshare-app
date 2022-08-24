@@ -4,6 +4,12 @@
 background: linear-gradient(180deg, rgba(128,185,24,1) 50%, rgba(255,255,255,1) 50%);
 }
 
+.stats-container{
+    display: flex;
+    margin: 0 16px;
+    gap: 16px;
+}
+
 .review-header{
     display: flex;
     align-items: center;

@@ -1,8 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonTitle, IonToolbar, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonTitle, IonToolbar, IonSearchbar, IonButton, IonIcon } from '@ionic/react';
 import ProductListCardHome from '../components/../components/ProductListCardHome';
 import { GoogleMap } from '@capacitor/google-maps';
 import { useState, useEffect, useRef } from 'react';
 import './Tab1.css';
+import { funnelOutline, searchOutline } from 'ionicons/icons';
 
 export default function Tab1() {
   const [searchText, setSearchText] = useState();
@@ -67,8 +68,18 @@ export default function Tab1() {
               </IonSegmentButton>
             </IonSegment>
           </IonToolbar>
-          <IonToolbar>
-            <IonSearchbar className='home-searchbar' value={searchText} onIonChange={e => setSearchText(e.detail.value)} showCancelButton="never"></IonSearchbar>
+          <IonToolbar className='home-heading'>
+            <div class="button-bar">
+              {/* <IonSearchbar className='home-searchbar' value={searchText} onIonChange={e => setSearchText(e.detail.value)} showCancelButton="never"></IonSearchbar> */}
+              <IonButton className='ion-no-margin'>
+                <IonIcon slot="icon-only" icon={searchOutline}/>
+              </IonButton>
+              <IonButton className='ion-no-margin'>
+                <IonIcon slot="icon-only" icon={funnelOutline}/>
+              </IonButton>
+              <IonButton className='ion-no-margin'>Sort by: Far far awaydasd asdasdasas</IonButton>
+              <IonButton className='ion-no-margin'>Category</IonButton>
+            </div>
           </IonToolbar>
         </IonHeader>
         <div className='segment-item home-map' id="map">

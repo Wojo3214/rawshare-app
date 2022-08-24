@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonItemGroup, IonPage, IonTitle, IonToolbar, Ion
 import PickUpLocation from '../components/PickUpLocation';
 import ProductListCardProfile from '../components/ProductListCardProfile';
 import ReviewItem from '../components/ReviewItem';
+import StatsItem from '../components/StatsItem';
 import { starSharp, personCircle } from 'ionicons/icons';
 import './Profile.css';
 
@@ -29,6 +30,10 @@ export default function Profile() {
           </IonToolbar>
           <IonImg src="https://cdn1.naekranie.pl/media/cache/article-cover/2021/10/Lucifer%20Morningstar_61696e5674054.jpeg" />
         </IonHeader>
+        <div className='stats-container'>
+          <StatsItem></StatsItem>
+          <StatsItem></StatsItem>
+        </div>
         <div class="food-container ion-margin-horizontal">
           <h3 className="ion-margin-bottom">User shares</h3>
           <ProductListCardProfile/>
