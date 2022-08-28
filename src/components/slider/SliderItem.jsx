@@ -4,7 +4,7 @@ import './SliderItem.css';
 
 export default function SliderItem({  }) {
     return (
-      <IonCard className="slider-item">
+      <IonCard button className="slider-item">
         <div className='img-container'>
           <IonImg src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
         </div>

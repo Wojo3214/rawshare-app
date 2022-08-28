@@ -118,7 +118,7 @@ export default function Tab3() {
                       <IonSelectOption value="kg">kg</IonSelectOption>
                       <IonSelectOption value="ml">ml</IonSelectOption>
                       <IonSelectOption value="l">l</IonSelectOption>
-                </IonSelect>
+                    </IonSelect>
                   </IonItem>
                 </div>
                 {/* <IonDatetimeButton datetime="datetime"></IonDatetimeButton>
@@ -139,7 +139,7 @@ export default function Tab3() {
                 <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className="form-label">Expiration date</IonLabel>
                   <IonText className="form-label date-button" id="open-modal" >{dateValue ? dateValue : "Choose..."}</IonText>
-                  <IonModal animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
+                  <IonModal canDismiss animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
                     <IonContent className='date-container ion-padding'>
                       <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons onIonChange={dateHandler}></IonDatetime>
                     </IonContent>

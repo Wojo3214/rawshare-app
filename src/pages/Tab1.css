@@ -14,11 +14,13 @@ ion-segment-button.home-segment-button{
     width: 38px;
 }
 
-.home-toolbar{
-    --padding-top: 24px;
-    --ion-toolbar-background: transparent;
-    --ion-toolbar-text-color: white;
+ion-toolbar.home-toolbar{
+    --padding-top: 64px;
+    --background: transparent;
+}
 
+ion-toolbar.home-heading{
+    --background: transparent;
 }
 
 capacitor-google-map {
@@ -50,9 +52,8 @@ capacitor-google-map {
 
 .button-bar{
     display: flex;
-    overflow-x: scroll;
     gap: 8px;
-    margin-left: 16px;
+    margin: 0 16px;
 }
 
 .button-bar ion-button{
@@ -61,6 +62,10 @@ capacitor-google-map {
     --background: #FAFAFA;
     --background-activated: #f0f0f0;
     --transition: 0.3s;
+}
+
+ion-button.search-btn , ion-button.filters-btn{
+    width: fit-content;
 }
 
 /* .button-bar ion-searchbar.home-searchbar{
@@ -75,8 +80,24 @@ capacitor-google-map {
 
 .home-slider {
    max-height: 195px;
-   position: fixed;
-   bottom: 101px;
-   left: 0px;
-   right: 0px;
+   position: fixed !important;
+   bottom: 20px;
+   left: 0;
+   right: 0;
+}
+
+.toolbar-background {
+    --background: transparent;
+}
+
+.filters-modal{
+    --padding-top:32px;
+    --padding-start:16px;
+    --padding-end:16px;
+    --padding-bottom:32px;
+}
+
+.filter-buttons {
+    gap: 16px;
+    margin-top: 32px;
 }
