@@ -1,8 +1,8 @@
 import { IonCard, IonItem, IonCardHeader, IonCardTitle, IonBadge } from '@ionic/react';
 import { starSharp, timeOutline, locationOutline } from 'ionicons/icons';
-import './Notification.css';
+import './NotificationItem.css';
 
-export default function Notification({  }) {
+export default function NotificationItem({  }) {
     return (
       <IonCard className='notification-card' button>
         <IonItem className='notification-item' lines='none'>

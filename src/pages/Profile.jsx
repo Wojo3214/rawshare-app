@@ -1,8 +1,8 @@
 import { IonContent, IonHeader, IonItemGroup, IonPage, IonTitle, IonToolbar, IonIcon,IonButtons, IonBackButton, IonButton, IonImg, IonRow, IonCol } from '@ionic/react';
-import PickUpLocation from '../components/PickUpLocation';
-import ProductListCardProfile from '../components/ProductListCardProfile';
-import ReviewItem from '../components/ReviewItem';
-import StatsItem from '../components/StatsItem';
+import PickUpLocation from '../components/location/PickUpLocation';
+import ProductListCardProfile from '../components/cards/ProductListCardProfile';
+import ReviewItem from '../components/review/ReviewItem';
+import StatsItem from '../components/statsItem/StatsItem';
 import { starSharp, personCircle } from 'ionicons/icons';
 import './Profile.css';
 
@@ -31,8 +31,9 @@ export default function Profile() {
           <IonImg src="https://cdn1.naekranie.pl/media/cache/article-cover/2021/10/Lucifer%20Morningstar_61696e5674054.jpeg" />
         </IonHeader>
         <div className='stats-container'>
-          <StatsItem></StatsItem>
-          <StatsItem></StatsItem>
+          <StatsItem type="shared" shared={32}></StatsItem>
+          <StatsItem type="collected" collected={2+"/"+10}></StatsItem>
+
         </div>
         <div class="food-container ion-margin-horizontal">
           <h3 className="ion-margin-bottom">User shares</h3>

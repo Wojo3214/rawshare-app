@@ -1,5 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonLabel, IonItem } from '@ionic/react';
+import SliderItem from '../components/slider/SliderItem';
+import { starSharp, timeOutline, locationOutline } from 'ionicons/icons';
 import './Tab2.css';
 
 export default function Tab2() {
@@ -16,7 +17,7 @@ export default function Tab2() {
             <IonTitle size="large">Orders</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+        <SliderItem />
       </IonContent>
     </IonPage>
   );

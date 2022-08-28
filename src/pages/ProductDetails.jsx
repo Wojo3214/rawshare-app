@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonBackButton, IonImg, IonFooter, IonBadge, IonIcon, IonItem, IonAvatar, IonLabel, IonText } from '@ionic/react';
 import { calendarOutline, timeOutline, pinOutline, starSharp } from 'ionicons/icons';
-import PickUpLocation from '../components/PickUpLocation';
+import PickUpLocation from '../components/location/PickUpLocation';
 import './ProductDetails.css';
 
 export default function ProductDetails() {

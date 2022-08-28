@@ -8,10 +8,6 @@
     --padding-bottom: 8px;
 }
 
-.stats-item .stats-icon{
-    height: 100%;
-}
-
 .stats-item ion-col{
     --padding-start: 0px;
     --padding-end: 0px;
@@ -26,6 +22,11 @@
 .stats-info {
     text-align: center;
     font-size: 14px;
+}
+
+.stats-info .stats-number{
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .stats-info p{

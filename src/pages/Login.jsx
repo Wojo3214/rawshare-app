@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonImg, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/login-form/LoginForm';
 import './Login.css';
 
 export default function Login() {

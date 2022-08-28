@@ -1,4 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
+import { Home, Bell, User } from 'react-feather';
 import {
   IonApp,
   IonIcon,
@@ -79,7 +80,7 @@ export default function App(){
           </IonRouterOutlet>
           <IonTabBar slot="bottom" class='navbar'>
             <IonTabButton class='nav-icon' tab="tab1" href="/tab1">
-              <IonIcon icon={homeOutline} />
+              <Home color="#2d2d2d" size={24} />
             </IonTabButton>
             <IonTabButton class='nav-icon' tab="tab2" href="/tab2">
               <IonIcon icon={restaurantOutline} />
@@ -89,10 +90,10 @@ export default function App(){
               <IonIcon icon={addOutline} />
             </IonTabButton>
             <IonTabButton class='nav-icon' tab="profile" href="/profile">
-              <IonIcon icon={personOutline} />
+              <User color="#2d2d2d" size={24} />
             </IonTabButton>
             <IonTabButton class='nav-icon' tab="tab5" href="/tab5">
-              <IonIcon icon={notificationsOutline} />
+              <Bell color="#2d2d2d" size={24} />
               <IonBadge>3</IonBadge>
             </IonTabButton>
           </IonTabBar>

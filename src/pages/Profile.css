@@ -1,7 +1,7 @@
 .profile-header{
     height: 200px;
     background: rgb(128,185,24);
-background: linear-gradient(180deg, rgba(128,185,24,1) 50%, rgba(255,255,255,1) 50%);
+    background: linear-gradient(180deg, rgba(128,185,24,1) 50%, rgba(255,255,255,1) 50%);
 }
 
 .stats-container{
@@ -10,10 +10,19 @@ background: linear-gradient(180deg, rgba(128,185,24,1) 50%, rgba(255,255,255,1) 
     gap: 16px;
 }
 
+.food-container{
+    margin-bottom: 32px;
+}
+
 .review-header{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 8px;
+}
+
+.review-header ion-item {
+    font-size: 24px;
 }
 
 .review-box{

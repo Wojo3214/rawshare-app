@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import Notification from '../components/Notification';
+import Notification from '../components/notification/NotificationItem';
 import './Tab5.css';
 
 export default function Tab5() {

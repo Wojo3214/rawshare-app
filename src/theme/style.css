@@ -1,50 +1,30 @@
-/***NAVIGATION***/
-.navbar{
-    contain: none;
-    overflow: visible;
-    border: none;
-    background-color: #fafafa;
-    padding-bottom: 16px;
-}
-
-.nav-icon {
-    background-color: #fafafa;
-}
-
-.add-product-tab{
-    background-color: var(--ion-color-primary);
-    color: var(--ion-color-primary-contrast);
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-self: center;
-    flex: none;
-    margin-bottom: 52px;
-    outline: 12px solid #fafafa;
-}
-
-
 /*##### GLOBAL BUTTON STYLE #####*/
-
 .btn {
     --border-radius: 1000px;
     font-weight: 600;
-    height: 40px;
+    height: 54px;
 }
 
 .btn-primary{
     --background: var(--ion-color-primary);
+    --background-activated: #86c119;
+    --transition: 0.5s;
 }
 
 .btn-primary--negative{
     --background: #fafafa;
     --color: var(--ion-text-color);
+    --background-activated: #ffffff;
+    --transition: 0.5s;
 }
 
 .btn-secondary{
     background-color: none;
     --border-color: var(--ion-color-primary);
+    --border-width: 2px;
+    --background-activated: var(--ion-color-primary);
+    --color-activated: #fafafa;
+    --transition: 0.5s;
 }
 
 .btn-secondary--negative{
@@ -52,6 +32,9 @@
     --color: #fafafa;
     --border-color: #fafafa;
     --border-width: 2px;
+    --background-activated: #fafafa;
+    --color-activated: var(--ion-text-color);
+    --transition: 0.5s;
 }
 
 ion-badge{
@@ -91,6 +74,32 @@ h2{
 h3{
     font-size: 20px;
     font-weight: 800;
+}
+
+/***NAVIGATION***/
+.navbar{
+    contain: none;
+    overflow: visible;
+    border: none;
+    background-color: #fafafa;
+    padding-bottom: 16px;
+}
+
+.nav-icon {
+    background-color: #fafafa;
+}
+
+.add-product-tab{
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-self: center;
+    flex: none;
+    margin-bottom: 52px;
+    outline: 12px solid #fafafa;
 }
 
 /*** FLEXBOX ***/

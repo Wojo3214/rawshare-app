@@ -1,9 +1,13 @@
 import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonTitle, IonToolbar, IonSearchbar, IonButton, IonIcon } from '@ionic/react';
-import ProductListCardHome from '../components/../components/ProductListCardHome';
+import { funnelOutline, searchOutline } from 'ionicons/icons';
+import ProductListCardHome from '../components/../components/cards/ProductListCardHome';
+import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
+import { Swiper, SwiperSlide} from 'swiper/react';
 import { useState, useEffect, useRef } from 'react';
 import './Tab1.css';
-import { funnelOutline, searchOutline } from 'ionicons/icons';
+
+import 'swiper/css';
 
 export default function Tab1() {
   const [searchText, setSearchText] = useState();
@@ -52,13 +56,14 @@ export default function Tab1() {
   
   return (
     <IonPage>
-      <IonHeader translucent collapse="condense">
+      {/* <IonHeader translucent collapse="condense">
         <IonToolbar className='toolbar-icon-padding home-toolbar'>
         </IonToolbar>
-      </IonHeader>
+      </IonHeader> */}
       <IonContent  fullscreen>
-        <IonHeader collapse="condense" translucent>
+        <IonHeader collapse="condense">
           <IonToolbar className='home-toolbar'>
+            {/* SEGMENT MAP/LIST */}
             <IonSegment className='home-segment' onIonChange={e => handleSegmentChange(e)}>
               <IonSegmentButton className='home-segment-button' value="map">
                 <IonLabel>Map</IonLabel>
@@ -68,6 +73,7 @@ export default function Tab1() {
               </IonSegmentButton>
             </IonSegment>
           </IonToolbar>
+          {/* BUTTON BAR*/}
           <IonToolbar className='home-heading'>
             <div class="button-bar">
               {/* <IonSearchbar className='home-searchbar' value={searchText} onIonChange={e => setSearchText(e.detail.value)} showCancelButton="never"></IonSearchbar> */}
@@ -82,11 +88,37 @@ export default function Tab1() {
             </div>
           </IonToolbar>
         </IonHeader>
+        {/* SEGMENT MAP */}
         <div className='segment-item home-map' id="map">
+          {/* GOOGLE MAP */}
           <div className="component-wrapper">
             <capacitor-google-map ref={mapRef}></capacitor-google-map>
           </div>
+          {/* SLIDER */}
+          <Swiper className='home-slider'
+            spaceBetween={16}
+            slidesPerView={2.5}
+            height={30}>
+            
+            <SwiperSlide>
+              <SliderItem />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderItem />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderItem />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderItem />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderItem />
+            </SwiperSlide>
+
+          </Swiper>
         </div>
+        {/* SEGMENT LIST */}
         <div className='segment-item home-list' id="list">
           <ProductListCardHome type="home-card" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
         </div>

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton, IonModal } from '@ionic/react';
+import Moment from 'moment';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton, IonModal, IonDatetimeButton, IonText } from '@ionic/react';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Pagination } from "swiper";
 import './Tab3.css';
@@ -34,6 +35,7 @@ export default function Tab3() {
     }
   }
 
+
   function singleButton(){
     return (
       <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
@@ -46,7 +48,18 @@ export default function Tab3() {
     )
   }
 
+  function dateHandler(e){
+    setDateValue(Moment(e.detail.value).format("DD-MM-YYYY"));
+    //setDateValue(modifyDateFormat(e.detail.value));
+  }
 
+  // function modifyDateFormat(date){
+  //   Moment(date).format("DD/MM/YYYY");
+  //   return date;
+  // }
+
+  const [dateValue, setDateValue] = useState('');
+  console.log("expiration date", dateValue);
   return (
     <IonPage>
       <IonHeader collapse="condense">
@@ -108,12 +121,27 @@ export default function Tab3() {
                 </IonSelect>
                   </IonItem>
                 </div>
-                <IonItem lines='none' className='add-list-item'>
+                {/* <IonDatetimeButton datetime="datetime"></IonDatetimeButton>
+                <IonModal keepContentsMounted={true} initialBreakpoint={0.40}>
+                  <IonDatetime id="datetime" preferWheel></IonDatetime>
+                </IonModal> */}
+                  
+                {/* <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className="form-label">Expiration date</IonLabel>
                   <IonButton expand="block" className="form-label date-button" id="open-modal" >Pick up date</IonButton>
                   <IonModal animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
                     <IonContent className='date-container ion-padding'>
                       <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons></IonDatetime>
+                    </IonContent>
+                  </IonModal>
+                </IonItem> */}
+                {/* <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons onIonChange={(e) => setDateValue(e.detail.value)}></IonDatetime> */}
+                <IonItem lines='none' className='add-list-item'>
+                  <IonLabel position="stacked" className="form-label">Expiration date</IonLabel>
+                  <IonText className="form-label date-button" id="open-modal" >{dateValue ? dateValue : "Choose..."}</IonText>
+                  <IonModal animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
+                    <IonContent className='date-container ion-padding'>
+                      <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons onIonChange={dateHandler}></IonDatetime>
                     </IonContent>
                   </IonModal>
                 </IonItem>
