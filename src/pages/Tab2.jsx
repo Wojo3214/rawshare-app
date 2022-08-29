@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonLabel, IonItem } from '@ionic/react';
-import SliderItem from '../components/slider/SliderItem';
+import OrderItem from '../components/orders/OrderItem';
 import { starSharp, timeOutline, locationOutline } from 'ionicons/icons';
 import './Tab2.css';
 
@@ -17,7 +17,9 @@ export default function Tab2() {
             <IonTitle size="large">Orders</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <SliderItem />
+        <OrderItem status={"pending"}/>
+        <OrderItem status={"accepted"}/>
+        <OrderItem />
       </IonContent>
     </IonPage>
   );
