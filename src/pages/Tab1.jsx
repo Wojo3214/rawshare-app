@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonCheckbox, IonToolbar, IonSearchbar, IonButton, IonIcon, IonModal, IonItem, useIonPicker, IonRange, IonButtons } from '@ionic/react';
 import { closeOutline, funnelOutline, searchOutline } from 'ionicons/icons';
-import ProductListCardHome from '../components/../components/cards/ProductListCardHome';
+import ProductCard from '../components/cards/ProductCard';
 import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
 import { Swiper, SwiperSlide} from 'swiper/react';
@@ -53,7 +53,7 @@ export default function Tab1() {
   useEffect(
     () => {
       const segment = document.querySelector(".home-segment");
-      segment.value = "map"
+      segment.value = "map";
       handleSegmentChange();
       createMap();
     },
@@ -152,38 +152,36 @@ export default function Tab1() {
             spaceBetween={16}
             slidesPerView={2.5}
             height={30}>
-            
             <SwiperSlide>
-              <SliderItem />
+              <SliderItem type="home"/>
             </SwiperSlide>
             <SwiperSlide>
-              <SliderItem />
+              <SliderItem type="home"/>
             </SwiperSlide>
             <SwiperSlide>
-              <SliderItem />
+              <SliderItem type="home"/>
             </SwiperSlide>
             <SwiperSlide>
-              <SliderItem />
+              <SliderItem type="home"/>
             </SwiperSlide>
             <SwiperSlide>
-              <SliderItem />
+              <SliderItem type="home"/>
             </SwiperSlide>
-
           </Swiper>
         </div>
         {/* SEGMENT LIST */}
         <div className='segment-item home-list' id="list">
-          <ProductListCardHome type="home-card" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          <ProductListCardHome type="home-card" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          <ProductListCardHome type="home-card" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          <ProductListCardHome type="home-card" title="Mint" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/4503751/pexels-photo-4503751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+          <ProductCard type="wishlist" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+          <ProductCard type="home" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+          <ProductCard type="profile" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+          <ProductCard type="home" title="Mint" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/4503751/pexels-photo-4503751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
         </div>
 
         <IonModal showBackdrop ref={modal} trigger="openSearchModal" animated breakpoints={[0, 0.4, 0.95]} initialBreakpoint={0.4}>
           <IonContent className="ion-padding">
             <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.95)} placeholder="Search" value={searchText} onIonChange={e => setSearchText(e.detail.value)}></IonSearchbar>
-            <ProductListCardHome type="home-card" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-            <ProductListCardHome type="home-card" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+            <ProductCard type="home" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+            <ProductCard type="home" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
           </IonContent>
         </IonModal>
 

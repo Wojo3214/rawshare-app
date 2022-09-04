@@ -17,8 +17,6 @@ export default function Status({status}) {
                     <span className="explanation">Pending</span>
                 </>
             }
-            
-            
         </div>
     );
     

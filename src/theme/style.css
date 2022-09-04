@@ -130,3 +130,23 @@ box-shadow: 2px 10px 14px 0px rgba(119,168,27,0.16);
     gap: 4px;
 }
 
+/*** SEGMENT ***/
+ion-segment.home-segment, ion-segment.products-segment{
+    width: 100%;
+    margin: 0 16px;
+    --background: var(--ion-color-tertiary);
+    border-radius: 12px;
+}
+
+ion-segment-button.home-segment-button, ion-segment-button.products-segment-button{
+    --indicator-color: #FAFAFA;
+    font-size: 14px;
+    font-weight: 600;
+    --color: var(--ion-color-medium);
+    --color-checked: var(--ion-text-color);
+    width: 38px;
+    --border-radius: 10px;
+}
+
+/*** SLIDER ***/
+

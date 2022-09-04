@@ -1,0 +1,14 @@
+.wishlist-container{
+    height: 55vh;
+    overflow-y: scroll;
+}
+
+.wishlist-slider{
+    max-height: 195px;
+}
+
+.wishlist-slider-heading{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 16px 16px 0px;
+}
