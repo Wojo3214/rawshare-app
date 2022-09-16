@@ -1,26 +1,66 @@
-import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonCheckbox, IonToolbar, IonSearchbar, IonButton, IonIcon, IonModal, IonItem, useIonPicker, IonRange, IonButtons } from '@ionic/react';
-import { closeOutline, funnelOutline, searchOutline } from 'ionicons/icons';
+import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonCheckbox, IonToolbar, IonSearchbar, IonButton, IonIcon, IonModal, IonItem, useIonPicker, IonRange, IonButtons, useIonViewWillEnter } from '@ionic/react';
+import { funnelOutline, searchOutline } from 'ionicons/icons';
 import ProductListCardHome from '../components/../components/cards/ProductListCardHome';
 import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { useState, useEffect, useRef } from 'react';
+import { onValue} from "firebase/database";
+import { productsRef, usersRef } from "../firebase-config.js"
+import { useIonViewDidEnter } from '@ionic/react';
 import './Tab1.css';
-
 import 'swiper/css';
+
 
 export default function Tab1() {
   const [searchText, setSearchText] = useState();
   const [sortValue, setSortValue] = useState("Nearest");
   const [distance, setDistance] = useState(1);
   const [present] = useIonPicker();
+  const [products, setProducts] = useState([]);
 
+  //Getting all products from database
+  async function getAllUsers (){
+    onValue(usersRef, (snapshot) => {
+      const usersArray= [];
+      snapshot.forEach(snapshot => {
+        const data = snapshot.val();
+        const id = snapshot.key;
+        const user = {
+          id,
+          ...data,
+        };
+        usersArray.push(user);
+        console.log(usersArray);
+      })
+    });
+  }
+
+  //Getting all products from database
+  async function getAllProducts (){
+    const users = await getAllUsers();
+    onValue(productsRef, (snapshot) => {
+      const productsArray= [];
+      snapshot.forEach(snapshot => {
+        const data = snapshot.val();
+        const id = snapshot.key;
+        const product = {
+          id,
+          ...data,
+        };
+        productsArray.push(product);
+        console.log(productsArray);
+      })
+      setProducts(productsArray);
+    });
+  }
+
+  //GOOGLE MAPS
   const mapRef = useRef();
   let newMap= GoogleMap;
  
   async function createMap() {
     if (!mapRef.current) return;
-
     newMap = await GoogleMap.create({
       id: 'my-map',
       element: mapRef.current,
@@ -33,7 +73,6 @@ export default function Tab1() {
         zoom: 12,
         disableDefaultUI: true,
       }
-
     })
 
     const markerImage = {
@@ -56,8 +95,8 @@ export default function Tab1() {
       segment.value = "map"
       handleSegmentChange();
       createMap();
-    },
-    [],
+      getAllProducts();
+      },[],
   );
 
   function handleSegmentChange(){
@@ -173,10 +212,9 @@ export default function Tab1() {
         </div>
         {/* SEGMENT LIST */}
         <div className='segment-item home-list' id="list">
-          <ProductListCardHome type="home-card" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          <ProductListCardHome type="home-card" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          <ProductListCardHome type="home-card" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          <ProductListCardHome type="home-card" title="Mint" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/4503751/pexels-photo-4503751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+          {products.map( (product) => 
+            <ProductListCardHome key={product.id} type="home-card" title={product.productName} seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+          )}
         </div>
 
         <IonModal showBackdrop ref={modal} trigger="openSearchModal" animated breakpoints={[0, 0.4, 0.95]} initialBreakpoint={0.4}>
