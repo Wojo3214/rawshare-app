@@ -9,12 +9,26 @@ ion-card.slider-item{
 
 .img-container{
     height: 92px;
+    position: relative;
 }
 
 .img-container ion-img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.add-basket-btn{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 8px;
+    right: 8px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    
 }
 
 ion-card.slider-item ion-card-header{
@@ -27,7 +41,7 @@ ion-card.slider-item ion-card-header{
    
 }
 
-.slider-item ion-card-content.distance-info{
+.slider-item ion-card-content.distance-info, .slider-item ion-card-content.amount-info{
     color: var(--ion-color-details);
     padding: 2px 8px 8px 8px;
     display: flex;

@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { Home, Bell, User } from 'react-feather';
+import { Home, ShoppingBag, Plus, Bell, User } from 'react-feather';
 import {
   IonApp,
   IonIcon,
@@ -21,6 +21,7 @@ import Tab5 from './pages/Tab5';
 import Start from './pages/Start';
 import Login from './pages/Login';
 import ProductDetails from './pages/ProductDetails';
+import WishList from './pages/WishList';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -74,6 +75,9 @@ export default function App(){
             <Route path="/productDetails">
               <ProductDetails />
             </Route>
+            <Route path="/wishList">
+              <WishList />
+            </Route>
             <Route exact path="/">
               <Redirect to="/tab1" />
             </Route>
@@ -83,11 +87,11 @@ export default function App(){
               <Home color="#2d2d2d" size={24} />
             </IonTabButton>
             <IonTabButton class='nav-icon' tab="tab2" href="/tab2">
-              <IonIcon icon={restaurantOutline} />
+              <ShoppingBag color="#2d2d2d" size={24} />
               <IonBadge>6</IonBadge>
             </IonTabButton>
             <IonTabButton class='add-product-tab' tab="tab3" href="/tab3">
-              <IonIcon icon={addOutline} />
+              <Plus color="#fafafa" size={24} />
             </IonTabButton>
             <IonTabButton class='nav-icon' tab="profile" href="/profile">
               <User color="#2d2d2d" size={24} />

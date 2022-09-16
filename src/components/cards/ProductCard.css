@@ -1,0 +1,117 @@
+/*** GENERAL ***/
+ion-card{
+    box-shadow: none;
+}
+
+ion-item.product-list-card,
+ion-item.product-profile-card, 
+ion-item.wishlist-card{
+    --padding-start: 0px;
+    --padding-end: 8px;
+    --inner-padding-end: 0px;
+    display: flex;
+    align-items: flex-start;
+    --background: #F5F5F5;
+}
+
+ion-card.product-card, ion-card.wish-list{
+    margin: 16px;
+}
+
+ion-card-header.product-list-header, ion-card-header.product-profile-header, ion-card-header.wishlist-header{
+    padding: 8px 0 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    gap: 8px;
+    flex: 1;
+}
+
+ion-card-header.product-list-details, ion-card-header.product-profile-details{
+    padding: 8px 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    gap: 8px;
+}
+
+ion-card-title.product-list-title, 
+ion-card-title.product-profile-title, ion-card-title.wishlist-title{
+    font-size: 16px;
+}
+
+ion-icon.detail-icon{
+    font-size: 12px;
+}
+
+ion-icon{
+    font-size: 24px;
+}
+
+/*** PRODUCT HOME LIST CARD ***/
+ion-item.product-list-card{
+    height: 90px;
+}
+
+.product-list-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+ion-img.product-card-img{
+    height: 90px;
+}
+
+ion-img.product-card-img::part(image){
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+}
+
+ion-icon.detail-icon-star{
+    font-size: 12px;
+    color: var(--ion-color-warning);
+}
+
+/*** PRODUCT PROFILE CARD ***/
+ion-card.product-card:last-child, ion-card.wish-list:last-child{
+    margin: 0;
+}
+
+ion-icon.detail-icon-star{
+    font-size: 12px;
+    color: var(--ion-color-warning);
+}
+
+ion-chip.amount-label{
+    font-size: 12px;
+    padding-inline: 0;
+    margin-inline: 0;
+    margin: 0;
+    padding: 6px 12px;
+    height: fit-content;
+    background-color: var(--ion-color-blue);
+    color: white;
+    font-weight: 600;
+}
+
+ion-icon{
+    font-size: 20px;
+}
+
+/*** PRODUCT WISH LIST CARD ***/
+ion-item.wishlist-card, ion-img.wishlist-card-img{
+    height: 66px;
+}
+
+.wishlist-delete-btn{
+    align-self: center;
+    color: var(--ion-color-danger);
+}

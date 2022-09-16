@@ -5,6 +5,11 @@
     height: 54px;
 }
 
+.btn-sm{
+    width: 50%;
+    height: 42px;
+}
+
 .btn-primary{
     --background: var(--ion-color-primary);
     --background-activated: #86c119;
@@ -102,6 +107,20 @@ h3{
     outline: 12px solid #fafafa;
 }
 
+/* .add-product-tab{
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-self: center;
+    flex: none;
+    -webkit-box-shadow: 2px 10px 14px 0px rgba(119,168,27,0.16);
+-moz-box-shadow: 2px 10px 14px 0px rgba(119,168,27,0.16);
+box-shadow: 2px 10px 14px 0px rgba(119,168,27,0.16);
+} */
+
 /*** FLEXBOX ***/
 
 .flex-row {
@@ -110,4 +129,24 @@ h3{
     align-items: center;
     gap: 4px;
 }
+
+/*** SEGMENT ***/
+ion-segment.home-segment, ion-segment.products-segment{
+    width: 100%;
+    margin: 0 16px;
+    --background: var(--ion-color-tertiary);
+    border-radius: 12px;
+}
+
+ion-segment-button.home-segment-button, ion-segment-button.products-segment-button{
+    --indicator-color: #FAFAFA;
+    font-size: 14px;
+    font-weight: 600;
+    --color: var(--ion-color-medium);
+    --color-checked: var(--ion-text-color);
+    width: 38px;
+    --border-radius: 10px;
+}
+
+/*** SLIDER ***/
 
