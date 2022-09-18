@@ -5,8 +5,9 @@ import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { useState, useEffect, useRef } from 'react';
-import { onValue} from "firebase/database";
-import { productsRef, usersRef } from "../firebase-config.js"
+import { ref, onValue, child, set } from "firebase/database";
+//import { productsRef, usersRef } from "../firebase-config.js"
+import { db } from "../firebase-config.js";
 import { useIonViewDidEnter } from '@ionic/react';
 import './Tab1.css';
 import 'swiper/css';
@@ -18,43 +19,38 @@ export default function Tab1() {
   const [distance, setDistance] = useState(1);
   const [present] = useIonPicker();
   const [products, setProducts] = useState([]);
-
-  //Getting all products from database
-  async function getAllUsers (){
-    onValue(usersRef, (snapshot) => {
-      const usersArray= [];
-      snapshot.forEach(snapshot => {
-        const data = snapshot.val();
-        const id = snapshot.key;
-        const user = {
-          id,
-          ...data,
-        };
-        usersArray.push(user);
-        console.log(usersArray);
-      })
+  
+  function writeUserData(userId, firstName, lastName, email, pickUpPrefferedTime) {
+    //const db = getDatabase();
+    set(ref(db, 'users/' + userId), {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      pickUpPrefferedTime : pickUpPrefferedTime
     });
   }
 
-  //Getting all products from database
-  async function getAllProducts (){
-    const users = await getAllUsers();
-    onValue(productsRef, (snapshot) => {
-      const productsArray= [];
-      snapshot.forEach(snapshot => {
-        const data = snapshot.val();
-        const id = snapshot.key;
-        const product = {
-          id,
-          ...data,
-        };
-        productsArray.push(product);
-        console.log(productsArray);
-      })
-      setProducts(productsArray);
-    });
-  }
+  //writeUserData(2, "Wojo", "Dzwon", "wojo@gmail.com", "18:00 - 20:00");
 
+
+
+  // usersRef.child("products").on("value", snapshot => {
+  //   var promises = []
+  //   snapshot.forEach(productSnapshot => {
+  //     promises.push(productsRef.child(productSnapshot.key).once("value"));
+  //   })
+  //   Promise.all(promises).then(productSnapshot => {
+  //     // eventSnapshots contains the details of all events
+  //     //return productSnapshot.map(productSnapshot => productSnapshot.val());
+  //     console.log(productSnapshot.map(productSnapshot => productSnapshot.val()));
+  //   }).then(products => {
+
+  //     //dispatch({ type: FETCH_EVENTS, payload: events });
+  //   });
+  // })
+  // snapshot.forEach(function(childSnapshot) {
+  //   Ref.child(childSnapshot.key).once(...)
+  // })
   //GOOGLE MAPS
   const mapRef = useRef();
   let newMap= GoogleMap;
@@ -95,7 +91,6 @@ export default function Tab1() {
       segment.value = "map";
       handleSegmentChange();
       createMap();
-      getAllProducts();
       },[],
   );
 
@@ -168,7 +163,7 @@ export default function Tab1() {
           </IonToolbar>
           {/* BUTTON BAR*/}
           <IonToolbar className='home-heading'>
-            <div class="button-bar">
+            <div class="button-bar button-bar-home">
               {/* <IonSearchbar className='home-searchbar' value={searchText} onIonChange={e => setSearchText(e.detail.value)} showCancelButton="never"></IonSearchbar> */}
               <IonButton className='ion-no-margin search-btn' id='openSearchModal'>
                 <IonIcon slot="icon-only" icon={searchOutline}/>
@@ -211,7 +206,7 @@ export default function Tab1() {
         {/* SEGMENT LIST */}
         <div className='segment-item home-list' id="list">
           {products.map( (product) => 
-            <ProductCard key={product.id} type="home-card" title={product.productName} seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+            <ProductCard key={product.id} type="home" title={product.productName} seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
           )}
         </div>
 

@@ -1,3 +1,11 @@
+.pick-up-address {
+  margin: 16px 16px 200px 16px;
+}
+
+.pick-up-address-profile {
+  margin: 16px;
+}
+
 .pick-up-address-header > p {
   display: flex;
   align-items: center;

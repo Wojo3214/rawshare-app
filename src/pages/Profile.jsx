@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonItemGroup, IonPage, IonTitle, IonToolbar, IonIcon,IonButtons, IonBackButton, IonButton, IonImg, IonRow, IonCol } from '@ionic/react';
 import PickUpLocation from '../components/location/PickUpLocation';
-import ProductListCardProfile from '../components/cards/ProductListCardProfile';
+import ProductCard from '../components/cards/ProductCard';
 import ReviewItem from '../components/review/ReviewItem';
 import StatsItem from '../components/statsItem/StatsItem';
 import { starSharp, personCircle } from 'ionicons/icons';
@@ -35,11 +35,12 @@ export default function Profile() {
           <StatsItem type="collected" collected={2+"/"+10}></StatsItem>
 
         </div>
-        <div class="food-container ion-margin-horizontal">
-          <h3 className="ion-margin-bottom">User shares</h3>
-          <ProductListCardProfile/>
-          <ProductListCardProfile/>
-          <ProductListCardProfile/>
+        <div class="food-container">
+          <h3 className="ion-margin-bottom ion-margin-horizontal">User shares</h3>
+          <ProductCard type="profile"/>
+          <ProductCard type="profile"/>
+          <ProductCard type="profile"/>
+          <ProductCard type="profile"/>
         </div>
         <PickUpLocation address="Aarhus V 7329"/>
         <div class="review-container ion-margin-horizontal">

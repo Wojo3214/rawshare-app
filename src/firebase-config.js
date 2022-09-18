@@ -19,6 +19,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);
 
-export const productsRef = ref(db, 'products');
-export const usersRef = ref(db, 'users');
+// export const productsRef = ref(db, 'products');
+// export const usersRef = ref(db, 'users');
 

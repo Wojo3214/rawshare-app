@@ -114,10 +114,10 @@ export default function Tab3() {
                   <IonItem lines='none' className='add-list-item'>
                     <IonLabel position="stacked" className='form-label'>Unit</IonLabel>
                     <IonSelect placeholder="kg" interface="action-sheet" className='form-select' name='unit'>
-                      <IonSelectOption value="g">g</IonSelectOption>
-                      <IonSelectOption value="kg">kg</IonSelectOption>
-                      <IonSelectOption value="ml">ml</IonSelectOption>
-                      <IonSelectOption value="l">l</IonSelectOption>
+                      <IonSelectOption value="g">grams</IonSelectOption>
+                      <IonSelectOption value="kg">kilograms</IonSelectOption>
+                      <IonSelectOption value="ml">militers</IonSelectOption>
+                      <IonSelectOption value="l">liters</IonSelectOption>
                     </IonSelect>
                   </IonItem>
                 </div>

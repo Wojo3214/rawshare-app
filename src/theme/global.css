@@ -54,6 +54,22 @@ ion-button{
     width: 100%;
 }
 
+/*** INPUTS ***/
+ion-input.form-input, ion-textarea.form-input, ion-select.form-select {
+    --background: var(--ion-color-tertiary);
+    color: var(--ion-text-color);
+    border-radius: 4px;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-top: 12px !important;
+    --padding-bottom: 12px !important;
+}
+
+ion-label.form-label{
+    color: var(--ion-text-color);
+    z-index: 999;
+    font-weight: 600;
+}
 
 /*** FONTS ***/
 
@@ -88,6 +104,7 @@ h3{
     border: none;
     background-color: #fafafa;
     padding-bottom: 16px;
+    padding-top: 8px;
 }
 
 .nav-icon {
@@ -100,11 +117,11 @@ h3{
     border-radius: 100%;
     width: 40px;
     height: 40px;
+    margin: 0 16px;
     align-items: center;
     justify-self: center;
     flex: none;
-    margin-bottom: 52px;
-    outline: 12px solid #fafafa;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.14);
 }
 
 /* .add-product-tab{
@@ -148,5 +165,34 @@ ion-segment-button.home-segment-button, ion-segment-button.products-segment-butt
     --border-radius: 10px;
 }
 
+/*** BUTTON BAR ***/
+
+.button-bar{
+    display: flex;
+    gap: 8px;
+    margin: 0 16px;
+}
+
+.button-bar ion-button{
+    font-size: 14px;
+    --color: var(--ion-text-color);
+    --transition: 0.3s;
+}
+
+.button-bar-home ion-button{
+    --background: #FAFAFA;
+    --background-activated: #f0f0f0;
+    --transition: 0.3s;
+}
+.button-bar-orders ion-button{
+    --background: none;
+    --background-activated: none;
+    --background-focused: red;
+    width: auto;
+}
+
+ion-button.search-btn , ion-button.filters-btn{
+    width: fit-content;
+}
 /*** SLIDER ***/
 

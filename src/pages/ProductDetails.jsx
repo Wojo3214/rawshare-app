@@ -46,7 +46,7 @@ export default function ProductDetails() {
             <IonBadge className='product-info-amount' color="primary">2</IonBadge>
           </div>
         </IonItem>
-        <PickUpLocation address="Aarhus C 8210"/>
+        <PickUpLocation type="details" address="Aarhus C 8210"/>
         <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
           <IonToolbar color="none">
             <IonButtons slot="secondary">

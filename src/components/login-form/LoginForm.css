@@ -1,4 +1,4 @@
-.container {
+/* .container {
   text-align: center;
   position: absolute;
   left: 0;
@@ -21,7 +21,7 @@
 
 .container a {
   text-decoration: none;
-}
+} */
 
 .login-form{
   display: flex;
@@ -37,17 +37,32 @@
   --padding-top: 16px;
 } */
 
-ion-input.input{
+/* ion-input.input{
   --background: var(--ion-color-tertiary);
   --color: var(--ion-text-color);
-  --inner-padding-bottom: 12px;
+  --padding-bottom: 12px;
   --padding-end: 16px;
-  --inner-padding-start: 16px;
+  --padding-start: 16px;
   --padding-top: 12px;
   border-radius: 4px;
   box-sizing: border-box;
-}
+  font-size: 14px;
+  font-weight: 500;
+} */
 
 .login-text{
   text-align: center;
+}
+
+.login-text > a {
+  color: var(--ion-text-color);
+}
+
+.forgot-link{
+  font-size: 14px;
+  color: var(--ion-color-blue);
+}
+
+.btn-login{
+  margin-bottom: 64px;
 }

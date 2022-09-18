@@ -1,0 +1,109 @@
+{
+   "users": {
+        "user1": {
+            "email": "adam@gmail.com",
+            "firstName": "Adam",
+            "lastName": "Smith",
+            "pickUpPreferedTime": "18:00",
+            "addresses":{
+                "address1": true
+            },
+            "products":{
+                "product1": true,
+                "product5": true,
+                "product9": true
+            },
+            "verified": true
+        }
+   },
+   
+   "addresses": {
+        "address1": {
+            "streetName" : "Viborgsvej" ,
+            "buildingNum" : "10" ,
+            "postalCode" : "8210" ,
+            "city" : "Aarhus" ,
+            "country" : "Denmark",
+            "users": {
+                "user1": true,
+                "user6": true
+            }
+        }
+    },
+
+   "products": {
+        "product1": {
+            "productName": "Strawberry",
+            "productDescription": "Fresh and jummy, ready to eat!",
+            "productType": "Fruit",
+            "productCategories": { 
+                "productCategoryID1": true,
+                "productCategoryID2": true
+            },
+            "amount": 150,
+            "unit": "g",
+            "expirationDate": "12.09.2022",
+            "productImg": "link to img",
+            "users": {
+                "user1": true
+            },
+            "owner": "user1"
+        }
+   }, 
+   
+   "productCategories": {
+        "productCategoryID": {
+            "categoryName": "Vegan",
+            "productsInCategory": {
+                "product1": true,
+                "product2": true,
+                "product3": true,
+                "product4": true
+            }
+        }
+   },
+
+   "orders": {
+        "orderID": {
+            "buyer": "user1",
+            "seller": "user2",
+            "products": {
+                "product1": true,
+                "product10": true,
+                "product5": true
+            },
+            "pickupDate": "10.09.2022",
+            "pickupTime": "12:00"
+        }
+   }, 
+   
+   "ratings": {
+        "rating1ID": {
+            "authorID": "userAuthor",
+            "receiverID": "userReceiver",
+            "rating": 3.5,
+            "review": "Review text",
+            "timestamp": "12-03-2022 14:54:43"
+        }
+   },
+   "Countries": {
+        "countryID": {
+            "name": "Denmark",
+            "cities": {
+                "city1": true,
+                "city2": true,
+                "city3": true
+            }
+        }
+   },
+   "cities": {
+        "cityID": {
+            "name": "Aarhus",
+            "users": {
+                "user1": true,
+                "user2": true,
+                "user3": true
+            }
+        }
+   }
+}

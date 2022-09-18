@@ -40,7 +40,7 @@ ion-list.form-list{
     margin-bottom: 100px;
 }
 
-ion-input.form-input {
+/* ion-input.form-input {
     --background: #F5F5F5;
     color: black;
     border-radius: 4px;
@@ -59,7 +59,7 @@ ion-label.form-label{
     z-index: 999;
     margin-left: 8px;
     font-weight: 600;
-}
+} */
 
 .swiper-pagination{
     position: absolute;

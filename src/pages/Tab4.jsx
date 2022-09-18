@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ProductListCardProfile from '../components/ProductListCardProfile';
+import ProductCard from '../components/ProductCard';
 import './Tab4.css';
 
 export default function Tab4() {
@@ -16,7 +16,11 @@ export default function Tab4() {
             <IonTitle size="large">Profile</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ProductListCardProfile/>
+        <ProductCard type="profile"/>
+        <ProductCard type="profile"/>
+        <ProductCard type="profile"/>
+        <ProductCard type="profile"/>
+        <ProductCard type="profile"/>
       </IonContent>
     </IonPage>
   );

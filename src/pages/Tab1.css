@@ -50,7 +50,8 @@ capacitor-google-map {
     margin-left: 16px;
 } */
 
-.button-bar{
+
+/* .button-bar{
     display: flex;
     gap: 8px;
     margin: 0 16px;
@@ -66,7 +67,7 @@ capacitor-google-map {
 
 ion-button.search-btn , ion-button.filters-btn{
     width: fit-content;
-}
+} */
 
 /* .button-bar ion-searchbar.home-searchbar{
     width: 20px;

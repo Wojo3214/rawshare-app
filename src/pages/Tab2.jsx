@@ -51,15 +51,15 @@ export default function Tab2() {
           </IonToolbar>
           {/* BUTTON BAR*/}
           <IonToolbar className='booked-heading'>
-            <div class="button-bar">
-              <IonButton className='ion-no-margin search-btn' id='openSearchModal'>
+            <div class="button-bar button-bar-orders">
+              <IonButton className='ion-no-margin all-btn'>
                 All
               </IonButton>
-              <IonButton className='ion-no-margin filters-btn' id='openFiltersModal'>
-                Booked
+              <IonButton className='ion-no-margin bookes-btn'>
+                Accepted
               </IonButton>
-              <IonButton className='ion-no-margin filters-btn' id='openFiltersModal'>
-                Shared
+              <IonButton className='ion-no-margin shared-btn'>
+                Pending
               </IonButton>
             </div>
           </IonToolbar>
