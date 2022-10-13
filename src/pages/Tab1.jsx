@@ -5,9 +5,9 @@ import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { useState, useEffect, useRef } from 'react';
-import { ref, onValue, child, set } from "firebase/database";
+//import { ref, onValue, child, set } from "firebase/database";
 //import { productsRef, usersRef } from "../firebase-config.js"
-import { db } from "../firebase-config.js";
+//import { db } from "../firebase-config.js";
 import { useIonViewDidEnter } from '@ionic/react';
 import './Tab1.css';
 import 'swiper/css';
@@ -19,38 +19,7 @@ export default function Tab1() {
   const [distance, setDistance] = useState(1);
   const [present] = useIonPicker();
   const [products, setProducts] = useState([]);
-  
-  function writeUserData(userId, firstName, lastName, email, pickUpPrefferedTime) {
-    //const db = getDatabase();
-    set(ref(db, 'users/' + userId), {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      pickUpPrefferedTime : pickUpPrefferedTime
-    });
-  }
 
-  //writeUserData(2, "Wojo", "Dzwon", "wojo@gmail.com", "18:00 - 20:00");
-
-
-
-  // usersRef.child("products").on("value", snapshot => {
-  //   var promises = []
-  //   snapshot.forEach(productSnapshot => {
-  //     promises.push(productsRef.child(productSnapshot.key).once("value"));
-  //   })
-  //   Promise.all(promises).then(productSnapshot => {
-  //     // eventSnapshots contains the details of all events
-  //     //return productSnapshot.map(productSnapshot => productSnapshot.val());
-  //     console.log(productSnapshot.map(productSnapshot => productSnapshot.val()));
-  //   }).then(products => {
-
-  //     //dispatch({ type: FETCH_EVENTS, payload: events });
-  //   });
-  // })
-  // snapshot.forEach(function(childSnapshot) {
-  //   Ref.child(childSnapshot.key).once(...)
-  // })
   //GOOGLE MAPS
   const mapRef = useRef();
   let newMap= GoogleMap;
@@ -210,6 +179,7 @@ export default function Tab1() {
           )}
         </div>
 
+        {/* SEARCH MODAL */}
         <IonModal showBackdrop ref={modal} trigger="openSearchModal" animated breakpoints={[0, 0.4, 0.95]} initialBreakpoint={0.4}>
           <IonContent className="ion-padding">
             <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.95)} placeholder="Search" value={searchText} onIonChange={e => setSearchText(e.detail.value)}></IonSearchbar>
@@ -218,6 +188,7 @@ export default function Tab1() {
           </IonContent>
         </IonModal>
 
+        {/* FILTERS MODAL */}
         <IonModal showBackdrop ref={modal2} trigger="openFiltersModal" animated breakpoints={[0, 0.95]} initialBreakpoint={0.95}>
           <IonContent className="filters-modal">
             <h3 className="ion-margin-bottom">Category</h3>

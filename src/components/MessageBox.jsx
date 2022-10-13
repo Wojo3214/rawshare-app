@@ -59,6 +59,8 @@ export default function MessageBox({ type, title, text }) {
         </IonCol>
       </IonRow>
     );
+  } else {
+    console.log("Component type is not choosen");
   }
   
 };

@@ -33,7 +33,7 @@
 }
 
 .btn-secondary--negative{
-    --background: none;
+    --background-color: none;
     --color: #fafafa;
     --border-color: #fafafa;
     --border-width: 2px;

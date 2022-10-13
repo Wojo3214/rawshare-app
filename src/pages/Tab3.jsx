@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Moment from 'moment';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton, IonModal, IonDatetimeButton, IonText } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonItem, IonLabel, IonInput, IonList, IonTextarea, IonDatetime, IonSelect, IonSelectOption, IonBackButton, IonButtons, IonFooter, IonButton, IonModal, IonDatetimeButton, IonText, useIonPicker } from '@ionic/react';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Pagination } from "swiper";
 import './Tab3.css';
@@ -11,6 +11,7 @@ import 'swiper/css';
 export default function Tab3() {
   const [progressValue, setProgressValue] = useState(0.2);
   const [activeIndex, serActiveIndex] = useState(0);
+  const [country, setCountry] = useState();
 
   const pagination = {
     clickable: true,
@@ -35,6 +36,42 @@ export default function Tab3() {
     }
   }
 
+  const [present] = useIonPicker();
+  const openPicker = async () => {
+    present({
+      columns: [
+        {
+          name: 'countries',
+          options: [
+            {
+              text: 'Denmark',
+              value: 'Denmark',
+            },
+            {
+              text: 'Norway',
+              value: 'Norway',
+            },
+            {
+              text: 'Poland',
+              value: 'Poland',
+            },
+          ],
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        },
+        {
+          text: 'Select',
+          handler: (value) => {
+            setCountry(value.countries.value);
+          },
+        },
+      ],
+    });
+  };
 
   function singleButton(){
     return (
@@ -88,6 +125,7 @@ export default function Tab3() {
             modules={[Pagination]}
             onSlideChange={(e) => countProgress(e)}
           >
+            {/*PRODUCT INFO SLIDE*/}
             <SwiperSlide className='add-slide 0' id='0.2' value="lala">
               <IonList className='form-list'>
                 <IonItem lines='none' className='add-list-item'>
@@ -138,7 +176,7 @@ export default function Tab3() {
                 {/* <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons onIonChange={(e) => setDateValue(e.detail.value)}></IonDatetime> */}
                 <IonItem lines='none' className='add-list-item'>
                   <IonLabel position="stacked" className="form-label">Expiration date</IonLabel>
-                  <IonText className="form-label date-button" id="open-modal" >{dateValue ? dateValue : "Choose..."}</IonText>
+                  <IonText className="form-input date-button" id="open-modal" >{dateValue ? dateValue : "Choose..."}</IonText>
                   <IonModal canDismiss animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
                     <IonContent className='date-container ion-padding'>
                       <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons onIonChange={dateHandler}></IonDatetime>
@@ -147,11 +185,75 @@ export default function Tab3() {
                 </IonItem>
               </IonList> 
             </SwiperSlide>
+            {/*UPLOAD IMAGE SLIDE*/}
             <SwiperSlide className='add-slide 1' id='0.5' value="lalu">
               <p>Upload image</p>
             </SwiperSlide>
+
+            {/*PICK UP ADRRESS SLIDE*/}
             <SwiperSlide className='add-slide 2' id='0.8' value="lali">
-              <p>Pick-up Info</p>
+              <IonList className='form-list'>
+                <div className='product-amount-div'>
+                  <IonItem lines='none' className='add-list-item'>
+                    <IonLabel position="stacked" className='form-label'>From</IonLabel>
+                    <IonInput className='form-input' placeholder="17:00"></IonInput>
+                    {/* <IonDatetime presentation="time"></IonDatetime> */}
+                  </IonItem>
+                  <IonItem lines='none' className='add-list-item'>
+                    <IonLabel position="stacked" className='form-label'>To</IonLabel>
+                    <IonInput className='form-input' placeholder="20:00"></IonInput>
+                    {/* <IonDatetime presentation="time"></IonDatetime> */}
+                  </IonItem>
+                </div>
+                <IonItem lines='none' className='add-list-item'>
+                  <IonLabel position="stacked" className='form-label'>Street name</IonLabel>
+                  <IonInput className='form-input' placeholder="E.g. Holmstrup"></IonInput>
+                </IonItem>
+                <div className='product-amount-div'>
+                  <IonItem lines='none' className='add-list-item'>
+                    <IonLabel position="stacked" className='form-label'>Building num</IonLabel>
+                    <IonInput className='form-input' placeholder="E.g. 12"></IonInput>
+                  </IonItem>
+                  <IonItem lines='none' className='add-list-item'>
+                    <IonLabel position="stacked" className='form-label'>Flat num</IonLabel>
+                    <IonInput className='form-input' placeholder="E.g. kld. 10"></IonInput>
+                  </IonItem>
+                </div>
+                <IonItem lines='none' className='add-list-item'>
+                  <IonLabel position="stacked" className='form-label'>Postal code</IonLabel>
+                  <IonInput className='form-input' inputmode="numeric" minlength={4} maxlegth={4} placeholder="E.g. 8210"></IonInput>
+                </IonItem>
+                <IonItem lines='none' className='add-list-item'>
+                  <IonLabel position="stacked" className='form-label'>City</IonLabel>
+                  <IonInput className='form-input' placeholder="E.g. Aarhus"></IonInput>
+                </IonItem>
+                <IonItem lines='none' className='add-list-item'> 
+                  <IonLabel position="stacked" className='form-label'>Country</IonLabel>
+                  <IonInput className='form-input' placeholder="E.g. Denmark" onClick={openPicker}>{country}</IonInput>
+
+                  {/* <IonSelect placeholder="Food type" interface="action-sheet" className='form-select' name='food-type'>
+                    <IonSelectOption value="fruit">Denmark</IonSelectOption>
+                    <IonSelectOption value="vegetable">Norway</IonSelectOption>
+                    <IonSelectOption value="pre-cooked">Poland</IonSelectOption>
+                    </IonSelect> */}
+                </IonItem>
+                
+                {/* <IonDatetimeButton datetime="datetime"></IonDatetimeButton>
+                <IonModal keepContentsMounted={true} initialBreakpoint={0.40}>
+                  <IonDatetime id="datetime" preferWheel></IonDatetime>
+                </IonModal> */}
+                  
+                {/* <IonItem lines='none' className='add-list-item'>
+                  <IonLabel position="stacked" className="form-label">Expiration date</IonLabel>
+                  <IonButton expand="block" className="form-label date-button" id="open-modal" >Pick up date</IonButton>
+                  <IonModal animated initialBreakpoint={0.40}  trigger="open-modal" className='date-container'>
+                    <IonContent className='date-container ion-padding'>
+                      <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons></IonDatetime>
+                    </IonContent>
+                  </IonModal>
+                </IonItem> */}
+                {/* <IonDatetime cover className='date-modal' id="datetime" presentation='date' preferWheel showDefaultButtons onIonChange={(e) => setDateValue(e.detail.value)}></IonDatetime> */}
+              </IonList>
             </SwiperSlide>
           </Swiper>
           { activeIndex == 0 ?
@@ -166,7 +268,7 @@ export default function Tab3() {
           <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
             <IonToolbar color="none" className='add-product-footer'>
               <IonButtons slot="secondary">
-                <IonButton expand="block" className="btn btn-primary">Back</IonButton>
+                <IonButton expand="block" className="btn">Back</IonButton>
                 <IonButton expand="block" className="btn btn-primary">Next</IonButton>
               </IonButtons>
             </IonToolbar>
@@ -175,7 +277,7 @@ export default function Tab3() {
           <IonFooter className="ion-no-border book-btn-container ion-padding-horizontal" translucent>
             <IonToolbar color="none" className='add-product-footer'>
               <IonButtons slot="secondary">
-                <IonButton expand="block" className="btn btn-primary">Back</IonButton>
+                <IonButton expand="block" className="btn">Back</IonButton>
                 <IonButton expand="block" className="btn btn-primary">Add Item</IonButton>
               </IonButtons>
             </IonToolbar>

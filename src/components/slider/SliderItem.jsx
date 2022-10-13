@@ -44,6 +44,7 @@ export default function SliderItem({ type }) {
       </IonCard>
     );
   } else {
+    console.log("Component type is not choosen");
     return null
   }
     

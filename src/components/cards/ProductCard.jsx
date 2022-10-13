@@ -71,7 +71,7 @@ export default function ProductCard({type, title, address, seller, time, picture
                             <p className="default-text" >3kg</p>
                         </div>
                     </IonCardHeader>
-                    <Trash2 className="wishlist-delete-btn"size={24}/>
+                    <Trash2 className="wishlist-delete-btn" size={24}/>
                     {/* <IonCardHeader className='product-list-details'>
                         <IonButton slot="icon-only">
                             
@@ -80,6 +80,8 @@ export default function ProductCard({type, title, address, seller, time, picture
                 </IonItem>
             </IonCard>
         );
+    } else {
+        console.log("Component type is not choosen");
     }
     
     
