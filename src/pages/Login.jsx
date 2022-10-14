@@ -8,7 +8,7 @@ export default function Login() {
       <IonContent fullscreen>
         <div className="login-section">
           <IonHeader collapse="condense" className='ion-margin-top'>
-            <IonImg src='assets/icon/logo-name.svg' class="logo"></IonImg>
+            <IonImg src='assets/icon/logo-name.svg' className="logo"></IonImg>
             <IonToolbar>
               <IonTitle>Good to see you back!</IonTitle>
             </IonToolbar>

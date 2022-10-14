@@ -30,7 +30,7 @@ export default function ProductDetails() {
             <p><span><b>Preffered pick up time</b> </span><span>16:00 - 19:00</span></p>
           </div>
         </div>
-        <IonItem class='owner-info ion-margin' color="dark" lines='none'>
+        <IonItem className='owner-info ion-margin' color="dark" lines='none'>
           <IonAvatar slot="start">
             <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1200" />
           </IonAvatar>

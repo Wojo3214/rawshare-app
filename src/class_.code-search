@@ -1,0 +1,68 @@
+# Query: class=
+# ContextLines: 1
+
+17 results - 11 files
+
+src/components/location/PickUpLocation.jsx:
+  15:         <div class="map"></div>
+
+src/components/notification/NotificationItem.jsx:
+  12                  <div className='flex-row'>
+  13:                     <p className="default-text" ><span class='account-name'>Wojo</span> ordered some amazing stuff from you!</p>
+  14                  </div>
+
+src/components/orders/OrderItem.jsx:
+  23                      <IonCol size="12">
+  24:                         <span class="info-label">Order details</span> 
+  25                      </IonCol>
+
+  31                                  <Calendar size={20}/>
+  32:                                 <span class="order-details">15-03-2023</span> 
+  33                              </IonCol>
+
+  35                                  <Clock size={20}/>
+  36:                                 <span class="order-details">15:00</span> 
+  37                              </IonCol>
+
+  41                                  <MapPin size={20}/>
+  42:                                 <span class="order-details">Haslegarsvej 98V</span> 
+  43                              </IonCol>
+
+  45                                  <ShoppingBag size={20}/>
+  46:                                 <span class="order-details">3 products</span> 
+  47                              </IonCol>
+
+src/pages/Login.jsx:
+  11:             <IonImg src='assets/icon/logo-name.svg' class="logo"></IonImg>
+
+src/pages/ProductDetails.jsx:
+  16        <IonContent className="product-details-container" fullscreen>
+  17:         <IonImg src="https://images.pexels.com/photos/61127/pexels-photo-61127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="ion-padding product-img"></IonImg>
+  18:         <div class="product-info ion-padding ion-margin">
+  19            <div className='product-info-name'>
+
+src/pages/Profile.jsx:
+  37          </div>
+  38:         <div class="food-container">
+  39            <h3 className="ion-margin-bottom ion-margin-horizontal">User shares</h3>
+
+  45          <PickUpLocation address="Aarhus V 7329"/>
+  46:         <div class="review-container ion-margin-horizontal">
+  47            <IonRow>
+
+src/pages/Start.jsx:
+  9:           <IonImg src='assets/icon/logo-name.svg' class="logo-xl"></IonImg>
+
+src/pages/Tab1.jsx:
+  151            <IonToolbar className='home-heading'>
+  152:             <div class="button-bar button-bar-home">
+  153                {/* <IonSearchbar className='home-searchbar' value={searchText} onIonChange={e => setSearchText(e.detail.value)} showCancelButton="never"></IonSearchbar> */}
+
+src/pages/Tab2.jsx:
+  73:             <div class="button-bar button-bar-orders">
+
+src/pages/Tab3.jsx:
+  19:       return '<div class="' + className  + '">' + (index + 1) + "</div>";
+
+src/pages/WishList.jsx:
+  30:         <h3 class="wishlist-slider-heading">Other products of user name</h3>

@@ -1,13 +1,27 @@
-import { IonContent, IonHeader, IonPage, IonSegment, IonSegmentButton, IonLabel, IonCheckbox, IonToolbar, IonSearchbar, IonButton, IonIcon, IonModal, IonItem, useIonPicker, IonRange, IonButtons } from '@ionic/react';
+import { 
+  IonContent, 
+  IonHeader, 
+  IonPage, 
+  IonSegment, 
+  IonSegmentButton, 
+  IonLabel, 
+  IonCheckbox, 
+  IonToolbar, 
+  IonSearchbar, 
+  IonButton, 
+  IonIcon, 
+  IonModal, 
+  IonItem, 
+  useIonPicker, 
+  IonRange, 
+  IonButtons 
+} from '@ionic/react';
 import { closeOutline, funnelOutline, searchOutline } from 'ionicons/icons';
 import ProductCard from '../components/cards/ProductCard';
 import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { useState, useEffect, useRef } from 'react';
-//import { ref, onValue, child, set } from "firebase/database";
-//import { productsRef, usersRef } from "../firebase-config.js"
-//import { db } from "../firebase-config.js";
 import { useIonViewDidEnter } from '@ionic/react';
 import './Tab1.css';
 import 'swiper/css';

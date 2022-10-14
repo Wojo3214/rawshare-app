@@ -24,7 +24,7 @@ export default function OrderItem({type, status, address, seller, time, picture}
                         <span class="info-label">Order details</span> 
                     </IonCol>
                 </IonRow>
-                <IonRow class="info-container">
+                <IonRow className="info-container">
                     <IonCol size="12">
                         <IonRow>
                             <IonCol className="info-item" size="7">

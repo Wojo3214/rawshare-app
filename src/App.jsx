@@ -82,21 +82,21 @@ export default function App(){
               <Redirect to="/tab1" />
             </Route>
           </IonRouterOutlet>
-          <IonTabBar slot="bottom" class='navbar'>
-            <IonTabButton class='nav-icon' tab="tab1" href="/tab1">
+          <IonTabBar slot="bottom" className='navbar'>
+            <IonTabButton className='nav-icon' tab="tab1" href="/tab1">
               <Home color="#2d2d2d" size={24} />
             </IonTabButton>
-            <IonTabButton class='nav-icon' tab="tab2" href="/tab2">
+            <IonTabButton className='nav-icon' tab="tab2" href="/tab2">
               <ShoppingBag color="#2d2d2d" size={24} />
               <IonBadge>6</IonBadge>
             </IonTabButton>
-            <IonTabButton class='add-product-tab' tab="tab3" href="/tab3">
+            <IonTabButton className='add-product-tab' tab="tab3" href="/tab3">
               <Plus color="#fafafa" size={24} />
             </IonTabButton>
-            <IonTabButton class='nav-icon' tab="profile" href="/profile">
+            <IonTabButton className='nav-icon' tab="profile" href="/profile">
               <User color="#2d2d2d" size={24} />
             </IonTabButton>
-            <IonTabButton class='nav-icon' tab="tab5" href="/tab5">
+            <IonTabButton className='nav-icon' tab="tab5" href="/tab5">
               <Bell color="#2d2d2d" size={24} />
               <IonBadge>3</IonBadge>
             </IonTabButton>

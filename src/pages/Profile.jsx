@@ -9,7 +9,7 @@ import './Profile.css';
 export default function Profile() {
   return (
     <IonPage>
-      <IonHeader class="ion-no-border">
+      <IonHeader className="ion-no-border">
         <IonToolbar color='primary'>
           <IonButtons className="product-go-back-btn" slot="start" color='primary'>
             <IonBackButton defaultHref="home" text="" color="tertiary" />
@@ -23,7 +23,7 @@ export default function Profile() {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense" class='profile-header' color="secondary">
+        <IonHeader collapse="condense" className='profile-header' color="secondary">
        
         <IonToolbar color='primary'> 
             <IonTitle size="large">Lucyfer</IonTitle>
