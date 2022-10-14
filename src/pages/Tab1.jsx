@@ -9,6 +9,9 @@ import { useState, useEffect, useRef } from 'react';
 //import { productsRef, usersRef } from "../firebase-config.js"
 //import { db } from "../firebase-config.js";
 import { useIonViewDidEnter } from '@ionic/react';
+import { initializeApp } from "firebase/app";
+//import { getDatabase} from "firebase/database";
+//import {firebaseConfig} from "../firebase-config.js"
 import './Tab1.css';
 import 'swiper/css';
 
@@ -19,7 +22,6 @@ export default function Tab1() {
   const [distance, setDistance] = useState(1);
   const [present] = useIonPicker();
   const [products, setProducts] = useState([]);
-
   //GOOGLE MAPS
   const mapRef = useRef();
   let newMap= GoogleMap;
@@ -60,6 +62,8 @@ export default function Tab1() {
       segment.value = "map";
       handleSegmentChange();
       createMap();
+      getUserDetails();
+      getAllProducts();
       },[],
   );
 

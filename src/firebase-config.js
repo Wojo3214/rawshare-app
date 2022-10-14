@@ -5,7 +5,7 @@ import { getDatabase, ref } from "firebase/database";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyCUEOoEyiPzmdU87b-CjaWtJtXj_8cc5F8",
   authDomain: "rawshare-d6629.firebaseapp.com",
   databaseURL: "https://rawshare-d6629-default-rtdb.europe-west1.firebasedatabase.app",

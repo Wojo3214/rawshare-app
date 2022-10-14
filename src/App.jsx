@@ -22,6 +22,7 @@ import Start from './pages/Start';
 import Login from './pages/Login';
 import ProductDetails from './pages/ProductDetails';
 import WishList from './pages/WishList';
+import Emoji from './pages/Emoji';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -77,6 +78,9 @@ export default function App(){
             </Route>
             <Route path="/wishList">
               <WishList />
+            </Route>
+            <Route path="/emoji">
+              <Emoji />
             </Route>
             <Route exact path="/">
               <Redirect to="/tab1" />
