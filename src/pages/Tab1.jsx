@@ -32,7 +32,6 @@ export default function Tab1() {
   const [sortValue, setSortValue] = useState("Nearest");
   const [distance, setDistance] = useState(1);
   const [present] = useIonPicker();
-  const [products, setProducts] = useState([]);
 
   //GOOGLE MAPS
   const mapRef = useRef();
@@ -124,6 +123,9 @@ export default function Tab1() {
       ],
     });
   };
+
+  const user = db.users.findOne();
+  console.log(user);
   
   return (
     <IonPage>
@@ -188,9 +190,7 @@ export default function Tab1() {
         </div>
         {/* SEGMENT LIST */}
         <div className='segment-item home-list' id="list">
-          {products.map( (product) => 
-            <ProductCard key={product.id} type="home" title={product.productName} seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-          )}
+            <ProductCard key="1" type="home" title="Strawberry" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
         </div>
 
         {/* SEARCH MODAL */}
