@@ -124,8 +124,6 @@ export default function Tab1() {
     });
   };
 
-  const user = db.users.findOne();
-  console.log(user);
   
   return (
     <IonPage>
