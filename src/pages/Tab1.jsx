@@ -25,6 +25,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useIonViewDidEnter } from '@ionic/react';
 import './Tab1.css';
 import 'swiper/css';
+import {supabase} from '../config/supabaseClient';
 
 
 export default function Tab1() {
@@ -32,6 +33,8 @@ export default function Tab1() {
   const [sortValue, setSortValue] = useState("Nearest");
   const [distance, setDistance] = useState(1);
   const [present] = useIonPicker();
+  const [products, setProducts] = useState();
+
 
   //GOOGLE MAPS
   const mapRef = useRef();
@@ -73,6 +76,7 @@ export default function Tab1() {
       segment.value = "map";
       handleSegmentChange();
       createMap();
+      getProducts();
       },[],
   );
 
@@ -124,8 +128,11 @@ export default function Tab1() {
     });
   };
 
-  //const user = db.users.findOne();
-  //console.log(user);
+  //GET PRODUCTS 
+  async function getProducts() {
+    const products = await supabase.from('products').select()
+    setProducts(products.data);
+  }
   
   return (
     <IonPage>
@@ -171,34 +178,27 @@ export default function Tab1() {
             spaceBetween={16}
             slidesPerView={2.5}
             height={30}>
-            <SwiperSlide>
-              <SliderItem type="home"/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderItem type="home"/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderItem type="home"/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderItem type="home"/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderItem type="home"/>
-            </SwiperSlide>
+              {products? products.map((product) => 
+                <SwiperSlide>
+                  <SliderItem type="home" title={product.productName} picture={product.img}/>
+                </SwiperSlide>
+            ) : null}
           </Swiper>
         </div>
         {/* SEGMENT LIST */}
         <div className='segment-item home-list' id="list">
-            <ProductCard key="1" type="home" title="Strawberry" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+            {products? products.map((product) => 
+              <ProductCard key={product.id} type="home" title={product.productName} seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture={product.img}/>
+            ) : null}
         </div>
 
         {/* SEARCH MODAL */}
         <IonModal showBackdrop ref={modal} trigger="openSearchModal" animated breakpoints={[0, 0.4, 0.95]} initialBreakpoint={0.4}>
           <IonContent className="ion-padding">
             <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.95)} placeholder="Search" value={searchText} onIonChange={e => setSearchText(e.detail.value)}></IonSearchbar>
-            <ProductCard type="home" title="Banana" seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-            <ProductCard type="home" title="Strawberry" seller="Wojo" address="Haslegarsvej 24A" time="13:00 - 15:00" picture='https://images.pexels.com/photos/6944172/pexels-photo-6944172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+            {products? products.map((product) => 
+              <ProductCard key={product.id} type="home" title={product.productName} seller="Maddy" address="Haslegarsvej 24A" time="13:00 - 15:00" picture={product.img}/>
+            ) : null}
           </IonContent>
         </IonModal>
 

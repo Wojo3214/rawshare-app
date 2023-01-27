@@ -3,15 +3,15 @@ import { ShoppingBag } from 'react-feather';
 import { starSharp, timeOutline, locationOutline } from 'ionicons/icons';
 import './SliderItem.css';
 
-export default function SliderItem({ type }) {
+export default function SliderItem({ type, title, address, seller, time, picture }) {
   if(type=="home"){
     return (
       <IonCard button className="slider-item home">
         <div className='img-container'>
-          <IonImg src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+          <IonImg src={picture} />
         </div>
         <IonCardHeader>
-          <IonCardTitle className='product-name'>Food item name</IonCardTitle>
+          <IonCardTitle className='product-name'>{title}</IonCardTitle>
         </IonCardHeader>
         <IonCardContent className="distance-info">
           <IonIcon icon={locationOutline} slot="start" />
@@ -33,10 +33,10 @@ export default function SliderItem({ type }) {
           <IonButton className="add-basket-btn" slot="icon-only" shape="round">
             <ShoppingBag size="24"/>
           </IonButton>
-          <IonImg src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+          <IonImg src={picture} />
         </div>
         <IonCardHeader>
-          <IonCardTitle className='product-name'>Food item name</IonCardTitle>
+          <IonCardTitle className='product-name'>{title}</IonCardTitle>
         </IonCardHeader>
         <IonCardContent className="amount-info">
           3kg
