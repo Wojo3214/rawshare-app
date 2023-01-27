@@ -12,6 +12,7 @@
     "@capacitor/status-bar": "^4.0.0",
     "@ionic/react": "^6.2.2",
     "@ionic/react-router": "^6.2.2",
+    "@supabase/supabase-js": "^2.4.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",

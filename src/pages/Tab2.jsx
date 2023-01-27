@@ -1,5 +1,22 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonLabel, IonItem, IonButton, IonSegment, IonSegmentButton } from '@ionic/react';
+import { 
+  IonModal, 
+  IonContent, 
+  IonHeader, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar, 
+  IonIcon,
+  IonRow,
+  IonCol,
+  IonLabel, 
+  IonItem, 
+  IonButtons,
+  IonButton, 
+  IonSegment, 
+  IonSegmentButton 
+} from '@ionic/react';
 import OrderItem from '../components/orders/OrderItem';
+import ProductCard from '../components/cards/ProductCard';
 import { starSharp, timeOutline, locationOutline } from 'ionicons/icons';
 import { useState, useEffect, useRef } from 'react';
 import './Tab2.css';
@@ -26,6 +43,8 @@ export default function Tab2() {
       }
     }
   };
+  const modal = useRef(null);
+
   return (
     <IonPage>
       <IonHeader>
@@ -39,7 +58,7 @@ export default function Tab2() {
             <IonTitle size='large'>Your Products</IonTitle>
           </IonToolbar>
           <IonToolbar className='products-toolbar'>
-            {/* SEGMENT MAP/LIST */}
+            {/* SEGMENT BOOKED/SHARED */}
             <IonSegment className='products-segment' onIonChange={e => handleSegmentChange(e)}>
               <IonSegmentButton className='products-segment-button' value="booked">
                 <IonLabel>Booked</IonLabel>
@@ -65,15 +84,35 @@ export default function Tab2() {
           </IonToolbar>
         </IonHeader>
         <div className='segment-item' id="booked">
+          <IonRow id='openDetailsModal'>
+            <IonCol>OPEN MODAL</IonCol>
+          </IonRow>
           <OrderItem status={"pending"}/>
-          <OrderItem status={"accepted"}/>
-          <OrderItem />
+          <OrderItem status={"accepted"} />
+          <OrderItem status={"pending"}/>
         </div>
         <div className='segment-item' id="shared">
           <OrderItem status={"accepted"}/>
           <OrderItem status={"accepted"}/>
-          <OrderItem />
+          <OrderItem status={"pending"}/>
         </div>
+        <IonModal showBackdrop ref={modal} trigger="openDetailsModal">
+          <IonContent className="details-modal">
+            <IonHeader>
+              <IonToolbar>
+                <IonButtons slot="start">
+                  <IonButton>Cancel</IonButton>
+                </IonButtons>
+                <IonTitle>Order details</IonTitle>
+                <IonButtons slot="end">
+                  <IonButton strong={true} onClick={() => modal.current?.dismiss()}>
+                    Confirm
+                  </IonButton>
+                </IonButtons>
+              </IonToolbar>
+            </IonHeader>
+          </IonContent>
+        </IonModal>
       </IonContent>
     </IonPage>
   );
