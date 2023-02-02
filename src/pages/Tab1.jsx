@@ -22,10 +22,10 @@ import SliderItem from '../components/slider/SliderItem';
 import { GoogleMap } from '@capacitor/google-maps';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { useState, useEffect, useRef } from 'react';
+import { supabase } from '../config/supabaseClient';
 import { useIonViewDidEnter } from '@ionic/react';
 import './Tab1.css';
 import 'swiper/css';
-import {supabase} from '../config/supabaseClient';
 
 
 export default function Tab1() {

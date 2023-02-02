@@ -194,5 +194,21 @@ ion-segment-button.home-segment-button, ion-segment-button.products-segment-butt
 ion-button.search-btn , ion-button.filters-btn{
     width: fit-content;
 }
-/*** SLIDER ***/
 
+/*** TOAST ***/
+.success-toast{
+    --background: var(--ion-color-success);
+    --color: #fafafa;
+}
+
+.warning-toast{
+    --background: var(--ion-color-warning);
+    --color: #fafafa;
+}
+
+.error-toast{
+    --background: var(--ion-color-danger);
+    --color: #fafafa;
+}
+
+/*** SLIDER ***/
